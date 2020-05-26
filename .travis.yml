@@ -1,0 +1,25 @@
+langauge: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+  chrome: stable
+dist: xenial
+before_install:
+- yes | gem update --system --force
+- gem install bundler
+before_script:
+- gem install mailcatcher
+- mailcatcher
+script:
+- yarn
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+dd:
+  secure: 
+deploy: 
+  provider: heroku
+  api_key:
+    secure: nJ53N4taV2G45fOhATh0o37XSA8mANoTIY/N+n5kNto8I/XD277F0dViKv5LB7RXkuDuuDWi2akRWUfmPUqVOvHqEUrzH0zSljFBfT+qRZF4SQZgWEPHQxDVaC/2eVOU6h1k5toox3YpU7I7R9LHEE5M8IfyHIS/GQfcPhY4CYc9kLR656a8+tvAC4dCIi5wiOaUbTJau7ktfykSG370L19qyUqrZlhSO7Kh2mWPelus87lfTd0mxJ4FbwhRCvyc72g8CB34wil3L0rNPvGWsimj/T1hfBnJre1L8fcGR6YUiqKrqCVDSR/kurX6NPBCqdv+6nd5kYLNk06Tr4votXarYWvor5J22tBaFAM/S3rM3Cp4z4cykNPQwykooGOyOMmUhi2BnG1eFK34kZLbptxIsEOf/fQFDnNlXXJFuQVjTud6emOJKhuhUayQfFl7a1t/hPOM/LYSU+U6f5SED/PKl38asmNYbjPuABDtUxRX42scTKvpK+drzoV97xLJexHoOp5yd1gtAvEAif6tCwWbtn3Tcq6517c9jo9+1lJgPu5j2AuzOTiJjNKJbf/G0VJcSR8Np92diOMeR1ntEww1WodT+e36vmGF6DoiT5ldyLMvjJZy1g9F+YdWeozE/kHmn6qcCrWZfXVf+rigrsIVs3xIaMSq+ZMP5/JVUXo=
+  app: steadymind
+  run: rails db:migrate
