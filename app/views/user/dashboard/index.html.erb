@@ -1,0 +1,5 @@
+<% if current_user.mood %>
+  <%= render "partial/mood" %>
+<% else %>
+  <%= render "partial/dashboard" %>
+<% end %>
