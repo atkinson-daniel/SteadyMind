@@ -12,7 +12,6 @@ RSpec.describe 'As a user' do
     mood_entry = MoodLog.last
     expect(mood_entry.user_id).to eq 1
     expect(mood_entry.mood_id).to eq 3
+    expect(page).to have_content('Zen Quote')
   end
 end
-
-
