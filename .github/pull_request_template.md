@@ -8,6 +8,9 @@ closes #
 - [ ] No tests have been changed
 - [ ] Some tests have been changed
 - [ ] All of the tests have been changed(Please describe what in the world happened):
+### Rubocop:
+- [ ] No offenses
+- [ ] Offenses (number of offenses: _ )
 ## Checklist:
 - [ ] My code has no unused/commented out code
 - [ ] I have reviewed my code
