@@ -31,7 +31,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'faraday'
-gem 'figaro'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'omniauth-google-oauth2'
