@@ -3,6 +3,10 @@ class QuoteService
     get_json('today')
   end
 
+  def random_quote
+    get_json('random')
+  end
+
   private
 
   def get_json(url, params = nil)
