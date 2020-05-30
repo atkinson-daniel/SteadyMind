@@ -42,11 +42,12 @@ RSpec.describe 'As a user' do
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood2.id
 
-    expect(page). to have_content 'Edit Mood'
+    expect(page).to have_content 'Edit Mood'
     choose(id: "mood_id_#{@mood1.id}")
     click_on 'Save'
 
     mood_entry.reload
+    expect(page).to have_content 'Welcome, ' + user.name
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood1.id
   end
