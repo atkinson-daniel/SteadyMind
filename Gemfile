@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'faraday'
 gem 'factory_bot_rails'
 gem 'faker'
+gem 'gemoji'
 gem 'omniauth-google-oauth2'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
@@ -44,7 +45,6 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem 'rspec-rails'
 end
 
 group :development do

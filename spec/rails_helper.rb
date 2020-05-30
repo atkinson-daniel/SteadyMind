@@ -64,7 +64,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.include FactoryBot::Syntax::Methods  
+  config.include FactoryBot::Syntax::Methods
 
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
@@ -72,7 +72,7 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
-  
+
   def stub_omniauth
     OmniAuth.config.test_mode = true
       OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
@@ -84,6 +84,15 @@ RSpec.configure do |config|
           }
         }
       })
+  end
+
+  VCR.configure do |config|
+    config.ignore_hosts '127.0.0.1', 'localhost', 'chromedriver.storage.googleapis.com'
+    config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+    config.hook_into :webmock
+    config.filter_sensitive_data('<GOOGLE_CLIENT_ID>') { ENV['GOOGLE_CLIENT_ID'] }
+    config.filter_sensitive_data('<GOOGLE_CLIENT_SECRET>') { ENV['GOOGLE_CLIENT_SECRET'] }
+    config.configure_rspec_metadata!
   end
 
 end
