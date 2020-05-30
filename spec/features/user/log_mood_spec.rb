@@ -17,6 +17,9 @@ RSpec.describe 'As a user' do
     expect(current_path).to eq('/dashboard')
 
     expect(page).to have_content 'Please share your mood today to see your profile. You can always edit it later.'
+    click_on 'Submit'
+
+    expect(page).to have_content 'There was an error!'
 
     choose(id: "mood_id_#{@mood3.id}")
     click_on 'Submit'
