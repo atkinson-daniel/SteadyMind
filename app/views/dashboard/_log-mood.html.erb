@@ -3,7 +3,7 @@
     <i>You can always edit it later.</i></h2>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">Mood</h5>
+        <h5 class="card-title">How are you?</h5>
         <p class="card-text">
           <%= form_tag "/mood" do %>
             <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji %>

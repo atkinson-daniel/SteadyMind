@@ -6,7 +6,7 @@ RSpec.describe 'As a user', :vcr do
     @mood2 = Mood.create(name: 'neutral_face')
     @mood3 = Mood.create(name: 'smile')
   end
-  it 'once logged in, I\'m redirected to a page where I can log my mood.' do
+  it 'once logged in, I\'m redirected to a page where I can log my mood.', :vcr do
     stub_omniauth
 
     visit '/login'
