@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'As a user' do
+RSpec.describe 'As a user', :vcr do
   before do
     @mood1 = Mood.create(name: 'worried')
     @mood2 = Mood.create(name: 'neutral_face')
@@ -28,7 +28,7 @@ RSpec.describe 'As a user' do
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood3.id
   end
-  it 'if I already logged a mood, I can edit the mood from my dashboard.' do
+  it 'if I already logged a mood, I can edit the mood from my dashboard.', :vcr do
     stub_omniauth
 
     visit '/login'
@@ -50,6 +50,7 @@ RSpec.describe 'As a user' do
     click_on 'Save'
 
     mood_entry.reload
+    expect(page).to have_content 'Emancipate yourself from mental slavery, none but ourselves can free our mind.'
     expect(page).to have_content 'Welcome, ' + user.name
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood1.id
