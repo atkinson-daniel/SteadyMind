@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://zenquotes.io/api/today
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 May 2020 19:34:52 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.31
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '165'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: '[ {"q":"Emancipate yourself from mental slavery, none but ourselves
+        can free our mind.","a":"Bob Marley","h":"<blockquote>&ldquo;Emancipate yourself
+        from mental slavery, none but ourselves can free our mind.&rdquo; &mdash;
+        <footer>Bob Marley</footer></blockquote>"} ]'
+  recorded_at: Sat, 30 May 2020 19:34:53 GMT
+recorded_with: VCR 6.0.0

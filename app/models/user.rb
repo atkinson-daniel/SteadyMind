@@ -11,4 +11,18 @@ class User < ApplicationRecord
     user.save
     user
   end
+
+  def logged_mood?
+    entry = UserMood.where(user_id: id,
+                           created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+    !entry.empty?
+  end
+
+  def mood_entry
+    return unless logged_mood?
+
+    entry = UserMood.where(user_id: id,
+                           created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+    entry.first
+  end
 end

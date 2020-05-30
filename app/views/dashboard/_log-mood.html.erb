@@ -1,0 +1,16 @@
+<section id = "mood-entry">
+  <h2>Please share your mood today to see your profile.
+    <i>You can always edit it later.</i></h2>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">How are you?</h5>
+        <p class="card-text">
+          <%= form_tag "/mood" do %>
+            <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji %>
+            <br />
+            <%= submit_tag "Submit" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+<section>
