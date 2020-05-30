@@ -1,21 +1,20 @@
 <section id = "daily-zen-quote">
     <blockquote class="blockquote">
-      <p class="display-5 mb-0">"<%= @quote.quote %>"</p>
-      <footer class="blockquote-footer"><%= @quote.author %></footer>
+      <p class="display-5 mb-0">"<%= @dashboard.quote.quote %>"</p>
+      <footer class="blockquote-footer"><%= @dashboard.quote.author %></footer>
     </blockquote>
 </section>
 
 <section id = "dashboard-greeting">
-  <h2>Welcome, <%= current_user.name %></h2>
+  <h2>Welcome, <%= @dashboard.name %></h2>
 </section>
-
 <section id = "edit-mood">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Edit Mood</h5>
       <p class="card-text">
-        <%= form_tag "/mood/#{current_user.mood_entry.id}", method: :put do %>
-          <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji, { checked: current_user.mood_entry.mood_id } %>
+        <%= form_tag "/mood/#{@dashboard.user_mood}", method: :put do %>
+          <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji, { checked: @dashboard.user_selected_mood } %>
           <br />
           <%= submit_tag "Save", class: "btn btn-primary btn-lg btn-block"%>
         <% end %>
