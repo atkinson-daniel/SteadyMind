@@ -38,6 +38,8 @@ gem 'omniauth-google-oauth2'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 gem 'figaro'
+gem "chartkick"
+gem 'groupdate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
