@@ -1,16 +1,14 @@
 class SessionsController < ApplicationController
-  def index
-  end
+  def index; end
 
   def create
     user = User.from_omniauth(auth_info)
     session[:user_id] = user.id
     redirect_to '/dashboard'
   end
-  
+
   def destroy
     session.delete(:user_id)
-    # session[:user_id] = nil
     flash[:notice] = 'You have been logged out!'
     redirect_to root_path
   end
