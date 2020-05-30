@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200529013235) do
+ActiveRecord::Schema.define(version: 20200529025034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "mood_logs", force: :cascade do |t|
-    t.bigint "mood_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["mood_id"], name: "index_mood_logs_on_mood_id"
-  end
 
   create_table "moods", force: :cascade do |t|
     t.string "name"
@@ -29,5 +22,23 @@ ActiveRecord::Schema.define(version: 20200529013235) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "mood_logs", "moods"
+  create_table "user_moods", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "mood_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mood_id"], name: "index_user_moods_on_mood_id"
+    t.index ["user_id"], name: "index_user_moods_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "user_moods", "moods"
+  add_foreign_key "user_moods", "users"
 end
