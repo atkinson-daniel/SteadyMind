@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SteadyMind</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+<head>
+  <title>SteadyMind</title>
+  <%= csrf_meta_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+  <%= render template: 'layouts/header'%>
+  <% flash.each do |name, msg| %>
+    <div class="<%=name%>-flash">
+      <p><%= msg %></p>
+    </div>
+  <% end %>
+  <%= yield %>
+</body>
+
 </html>
