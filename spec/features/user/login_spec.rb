@@ -24,6 +24,24 @@ RSpec.describe 'As a visitor' do
     end
   end
 
+  it 'if I am already a user, I am taken to my dashboard and a new user is not created in the db' do
+    stub_omniauth
+    
+    visit '/login'
+    click_on 'Sign In With Google'
+
+    expect(User.count).to eq(1)
+   
+    click_on 'Logout'
+    
+    stub_omniauth
+    
+    visit '/login'
+    click_on 'Sign In With Google'
+
+    expect(User.count).to eq(1)
+  end
+
   it 'I cannot go to the dashboard page directly if not signed in' do
     visit '/dashboard'
 
