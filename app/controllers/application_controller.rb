@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    render file: 'public/404', status: 404 unless current_user
+    render file: 'public/404', status: :not_found unless current_user
   end
-
 end

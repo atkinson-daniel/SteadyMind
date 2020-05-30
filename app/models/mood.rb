@@ -1,5 +1,5 @@
 class Mood < ApplicationRecord
-  has_many :UserMoods
+  has_many :UserMoods, dependent: :destroy
 
   default_scope { order(id: :asc) }
 
