@@ -2,6 +2,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, uniqueness: true
   validates :uid, uniqueness: true
+  has_many :user_moods
 
   def self.from_omniauth(auth_info)
     user = User.find_or_create_by(uid: auth_info[:sub])
