@@ -1,0 +1,45 @@
+<h1>All Resources</h1>
+
+<section class='row'>
+  <div class="col-md-6 justify-content-start">
+    <h2>All Videos</h2>
+    <div id="player">
+      <script src="https://www.youtube.com/player_api" ></script>
+      <script>
+        // create youtube player
+        let player;
+        let position;
+        function onYouTubePlayerAPIReady() {
+          player = new YT.Player('player', {
+            width: '100%',
+            height: '100%',
+            videoId: 'sTANio_2E0Q',
+            events: {
+              onReady: '<=% @video_id =>',
+              // onStateChange: onPlayerStateChange
+            }
+          });
+        }
+
+        // autoplay video
+      </script>
+    </div>
+
+    <div class="additional-resources">
+      <button class="btn btn-outline-info">All Yoga Videos</button>
+      <button class="btn btn-outline-info">All Meditiation Videos</button>
+      <button class="btn btn-outline-info">All Motivational Videos</button>
+      <button class="btn btn-outline-info">Additional Resources</button>
+    </div>
+  </div>
+  <div class="col-md-6 justify-content-start">
+    <h2>Additional Links</h2>
+    <p>link</p>
+    <ul>
+      <li>Link 1</li>
+      <li>Link 2</li>
+      <li>Link 3</li>
+      <li>Link 4</li>
+    </ul>
+  </div>
+</section>
