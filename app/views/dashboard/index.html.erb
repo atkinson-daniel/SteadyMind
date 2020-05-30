@@ -1,0 +1,7 @@
+<% if current_user.logged_mood? %>
+  <%= render "edit-mood" %>
+<% end %>
+
+<% unless current_user.logged_mood? %>
+  <%= render "log-mood" %>
+<% end %>

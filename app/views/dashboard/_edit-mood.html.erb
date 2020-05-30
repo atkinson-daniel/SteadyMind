@@ -1,0 +1,11 @@
+<center>
+
+<h2>Welcome, <%= current_user.name %></h2>
+
+<h4>Edit Mood</h4>
+<%= form_tag "/mood/#{current_user.mood_entry.id}", method: :put do %>
+  <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji, { checked: current_user.mood_entry.mood_id } %>
+  <br />
+  <%= submit_tag "Save" %>
+<% end %>
+</center>
