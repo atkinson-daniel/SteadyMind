@@ -29,6 +29,17 @@ RSpec.describe 'As a user' do
       expect(first('.video-links').text).to_not be_empty
     end
 
+    it 'Can play a different video in the playlist' do
+      user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      expected_video_id = 'hJbRpHZr_d0'
+
+      visit '/dashboard'
+      click_link 'All Resources'
+      click_link 'Yoga For Anxiety and Stress'
+      expect(page).to have_current_path(all_resources_yoga_index_path(video_id: expected_video_id))
+    end
+
     it 'I can also see an aside with links to external resources' do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
