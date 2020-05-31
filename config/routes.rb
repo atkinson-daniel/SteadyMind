@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index, :show]
   resources :mood, only: [:create, :update]
 
-  get '/all_resources', to: 'all_resources#index'
+  namespace :all_resources do
+    resources :yoga, only: [:index]
+    resources :meditation, only: [:index]
+    resources :motivational, only: [:index]
+  end
 
   get '/auth/google_oauth2/callback', to: 'sessions#create'
 end
