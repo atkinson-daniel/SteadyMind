@@ -1,11 +1,12 @@
 module MoodResource
   class Video
-    attr_reader :video_id, :description, :type, :category
+    attr_reader :video_id, :description, :title, :category
 
     def initialize(info)
       @video_id = info[:video_id]
       @description = info[:description]
       @category = info[:category]
+      @title = info[:title]
     end
   end
 
@@ -15,7 +16,8 @@ module MoodResource
     json[:data].map do |key|
       info = { video_id: key[:attributes][:video_id],
                description: key[:attributes][:description],
-               category: key[:attributes][:category] }
+               category: key[:attributes][:category],
+               title: key[:attributes][:title] }
       Video.new(info)
     end
   end
