@@ -1,9 +1,13 @@
 class VideoService
   def get_videos(category)
     # get_json('/api/v1/videosfind_all', category)
-    return unless category == 'yoga'
-
-    response = File.read('spec/fixtures/yoga_video.json')
+    response = if category == 'motivational'
+                 File.read('app/mock/motivational_video.json')
+               elsif category == 'meditation'
+                 File.read('app/mock/meditation_video.json')
+               else
+                 File.read('app/mock/yoga_video.json')
+               end
     JSON.parse(response, symbolize_names: true)
   end
 
