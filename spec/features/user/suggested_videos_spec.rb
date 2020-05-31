@@ -15,7 +15,7 @@ RSpec.describe 'As a user' do
     end
     it 'I can click Suggested Videos, and view suggested videos based on my mood (sad)', :vcr do
       expect(current_path).to eq('/dashboard')
-
+      
       UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 Feb 2020 21:21:12 UTC +00:00')
       UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 May 2020 21:21:12 UTC +00:00')
       UserMood.create!(user: @user, mood: @mood2, created_at: 'Wed 27 May 2020 21:21:12 UTC +00:00')
