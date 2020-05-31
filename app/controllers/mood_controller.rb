@@ -1,4 +1,6 @@
 class MoodController < ApplicationController
+  before_action :require_user
+
   def create
     mood = Mood.find_by(id: mood_params[:id])
     usermood = UserMood.new(user: current_user, mood: mood)
