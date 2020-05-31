@@ -13,7 +13,7 @@ RSpec.describe 'As a user' do
 
       @user = User.last
     end
-    it 'I can click Suggested Videos, and view suggested videos based on my mood (sad)' do
+    it 'I can click Suggested Videos, and view suggested videos based on my mood (sad)', :vcr do
       expect(current_path).to eq('/dashboard')
 
       UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 Feb 2020 21:21:12 UTC +00:00')
@@ -25,6 +25,36 @@ RSpec.describe 'As a user' do
 
       click_on 'Suggested Videos'
 
-      expect(page).to have_content("Sad Videos")
+      expect(page).to have_link("20 Minute Relaxation Yoga")
+      expect(page).to have_link("Meditate With Your Plants!")
+      expect(page).to have_link("Inspirational and Sensational")
     end
+    # it 'I can click Suggested Videos, and view suggested videos based on my mood (neutral)' do
+    #   expect(current_path).to eq('/dashboard')
+    #
+    #   UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 Feb 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood2, created_at: 'Wed 27 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood2, created_at: 'Thu 28 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood3, created_at: 'Fri 29 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood1, created_at: 'Sat 30 May 2020 21:21:12 UTC +00:00')
+    #
+    #   click_on 'Suggested Videos'
+    #
+    #   expect(page).to have_content("Neutral Videos")
+    # end
+    # it 'I can click Suggested Videos, and view suggested videos based on my mood (happy)' do
+    #   expect(current_path).to eq('/dashboard')
+    #
+    #   UserMood.create!(user: @user, mood: @mood3, created_at: 'Tue 26 Feb 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood3, created_at: 'Tue 26 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood3, created_at: 'Wed 27 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood1, created_at: 'Thu 28 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood1, created_at: 'Fri 29 May 2020 21:21:12 UTC +00:00')
+    #   UserMood.create!(user: @user, mood: @mood3, created_at: 'Sat 30 May 2020 21:21:12 UTC +00:00')
+    #
+    #   click_on 'Suggested Videos'
+    #
+    #   expect(page).to have_content("Happy Videos")
+    # end
 end
