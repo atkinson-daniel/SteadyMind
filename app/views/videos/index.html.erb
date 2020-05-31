@@ -1,1 +1,33 @@
-<%= @videos %>
+<section class='container'>
+  <section class='row'>
+    <div class="col-md-6 justify-content-start">
+      <h2>Suggested Videos</h2>
+      <div id="player">
+        <script src="https://www.youtube.com/player_api" ></script>
+        <script>
+          let player;
+          let position;
+          function onYouTubePlayerAPIReady() {
+            player = new YT.Player('player', {
+              width: '100%',
+              height: '390px',
+              videoId: '<%= @videos.first.video_id %>',
+              events: {
+                onReady: onPlayerReady,
+              }
+            });
+          }
+
+          function onPlayerReady(event) {
+            event.target.playVideo();
+          }
+        </script>
+      </div>
+      <div class='video-links'>
+        <% @videos.each do |video| %>
+          <li><%= link_to video.title, "/all_resources/yoga?video_id=#{video.video_id}" %></li>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</section>
