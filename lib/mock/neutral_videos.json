@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "7067",
+      "type": "video",
+      "attributes": {
+        "id": "7067",
+        "video_id": "kYkWDrKlCfE",
+        "title": "Day 17 - Happiness Boost Yoga - 30 Days of Yoga",
+        "description": "Yoga with Adriene",
+        "thumbnail_url": "http://thumbail_example.com",
+        "category": "yoga"
+      }
+    },
+    {
+      "id": "7068",
+      "type": "video",
+      "attributes": {
+        "id": "7068",
+        "video_id": "g57Ch-PFpvM",
+        "title": "How To Be Happy - Motivational Speech",
+        "description": "Motivational speech",
+        "thumbnail_url": "http://thumbail_example.com",
+        "category": "yoga"
+      }
+    },
+    {
+      "id": "7069",
+      "type": "video",
+      "attributes": {
+        "id": "7069",
+        "video_id": "FQ_NoYUvaGY",
+        "title": "Joy Meditation (Strengthen Happiness)",
+        "description": "Strenghten happiness",
+        "thumbnail_url": "http://thumbail_example.com",
+        "category": "meditation"
+      }
+    }
+  ]
+}
