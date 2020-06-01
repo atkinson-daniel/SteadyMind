@@ -59,6 +59,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    chartkick (3.3.1)
     coderay (1.1.3)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -102,6 +103,8 @@ GEM
       net-http-pipeline
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.0.0)
+      activesupport (>= 5)
     hashdiff (1.0.1)
     hashie (4.1.0)
     highline (2.0.3)
@@ -316,12 +319,14 @@ DEPENDENCIES
   bootstrap (~> 4.5.0)
   byebug
   capybara
+  chartkick
   coffee-rails (~> 4.2)
   factory_bot_rails
   faker
   faraday
   figaro
   gemoji
+  groupdate
   jbuilder (~> 2.5)
   jquery-rails
   launchy

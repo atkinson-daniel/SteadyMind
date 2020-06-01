@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#index'
   get '/logout', to: 'sessions#destroy'
 
+  get '/stats', to: 'stats#index'
+
   resources :dashboard, only: [:index, :show]
   resources :mood, only: [:create, :update]
   resources :videos, only: [:index, :show]

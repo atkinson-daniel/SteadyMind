@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, uniqueness: true
   validates :uid, uniqueness: true
-
+  has_many :moods, through: :user_moods
   has_many :user_moods, dependent: :destroy
 
   def self.from_omniauth(auth_info)
@@ -26,6 +26,10 @@ class User < ApplicationRecord
     entry = UserMood.where(user_id: id,
                            created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
     entry.first
+  end
+
+  def mood_query
+    user_moods.joins(:mood).select(:name).group(:name).count
   end
 
   def suggested_videos
