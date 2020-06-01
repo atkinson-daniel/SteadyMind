@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'As a user' do
-  it 'when I visit the stats page I see line graph' do
+  it 'when I visit the stats page I see pie chart' do
     stub_omniauth
 
     visit '/login'
