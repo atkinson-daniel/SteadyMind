@@ -4,7 +4,7 @@ describe VideoService do
   describe "instance methods" do
     describe "#get_videos" do
       it "returns video based on category" do
-        json_response = File.read('app/mock/yoga_video.json')
+        json_response = File.read('lib/mock/yoga_video.json')
         stub_request(:get, "https://localhost:3000/api/v1/videos/find_all?category=yoga").
           to_return(status: 200, body: json_response)
 
