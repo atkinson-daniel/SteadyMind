@@ -73,4 +73,12 @@ RSpec.describe 'As a user' do
       expect(page).to have_link "All Meditation Videos"
       expect(page).to have_link "All Motivational Videos"
     end
+    it 'I can click Suggested Videos but I have not logged my mood', :vcr do
+      expect(current_path).to eq('/dashboard')
+
+      click_on 'Suggested Videos'
+
+      expect(page).to have_content "No video to display"
+    end
+
 end
