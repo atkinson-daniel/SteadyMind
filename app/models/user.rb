@@ -31,11 +31,11 @@ class User < ApplicationRecord
   def suggested_videos
     rating = mood_rating
     if rating < 1.5
-      MoodResource.get_suggested_videos('sad')
+      VideoResults.new.get_suggested_videos('sad')
     elsif rating > 1.5 && rating < 2.5
-      MoodResource.get_suggested_videos('neutral')
+      VideoResults.new.get_suggested_videos('neutral')
     elsif rating > 2.5
-      MoodResource.get_suggested_videos('happy')
+      VideoResults.new.get_suggested_videos('happy')
     end
   end
 
