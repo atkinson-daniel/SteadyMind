@@ -21,6 +21,6 @@ RSpec.describe 'As a user' do
 
     expect(current_path).to eq('/dashboard')
     find(:xpath, "//a[@href='/stats']").click
-    save_and_open_page
+    assert_css('.chartjs-render-monitor') if has_css?('.chartjs-render-monitor', visible: :all)
   end
 end
