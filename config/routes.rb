@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index, :show]
   resources :mood, only: [:create, :update]
+  resources :videos, only: [:index, :show]
 
   resources :all_resources, only: [:index]
 

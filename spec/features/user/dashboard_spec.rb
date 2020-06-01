@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'As a user' do
   before do
-    @mood1 = Mood.create(name: 'worried')
-    @mood2 = Mood.create(name: 'neutral_face')
-    @mood3 = Mood.create(name: 'smile')
+    @mood1 = Mood.create(name: 'worried', rating: 1)
+    @mood2 = Mood.create(name: 'neutral_face', rating: 2)
+    @mood3 = Mood.create(name: 'smile', rating: 3)
   end
   it 'once logged in, I can see links to stats, resources and suggested videos' do
     stub_omniauth
