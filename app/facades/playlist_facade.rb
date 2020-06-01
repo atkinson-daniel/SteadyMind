@@ -9,6 +9,8 @@ class PlaylistFacade < SimpleDelegator
   def current_video
     if @video_id
       @videos.find { |video| video.video_id == @video_id }
+    elsif @videos.nil?
+      nil
     else
       @videos.first
     end
