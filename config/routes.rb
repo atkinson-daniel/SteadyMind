@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :mood, only: [:create, :update]
   resources :videos, only: [:index, :show]
 
+  resources :all_resources, only: [:index]
+
   get '/auth/google_oauth2/callback', to: 'sessions#create'
 end

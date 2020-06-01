@@ -1,0 +1,44 @@
+<section class='row'>
+  <div class="col-md-6 justify-content-start">
+    <h2>All <%= @playlist_videos.current_video.category.capitalize %> Videos</h2>
+    <div id="player">
+      <script src="https://www.youtube.com/player_api" ></script>
+      <script>
+        let player;
+        let position;
+        function onYouTubePlayerAPIReady() {
+          player = new YT.Player('player', {
+            width: '100%',
+            height: '390px',
+            videoId: '<%= @playlist_videos.current_video.video_id %>',
+            events: {
+              onReady: onPlayerReady,
+            }
+          });
+        }
+
+        function onPlayerReady(event) {
+          event.target.playVideo();
+        }
+      </script>
+    </div>
+    <div class='video-links'>
+      <% @playlist_videos.videos.each do |video| %>
+        <li><%= link_to video.title, "/all_resources?video_id=#{video.video_id}&category=#{video.category}" %></li>
+      <% end %>
+    </div>
+  </div>
+  <div class="additional-resources col-md-2 justify-content-start">
+    <a class="btn btn-outline-info resource-links" href='/all_resources?category=yoga'>All Yoga Videos</a>
+    <a class="btn btn-outline-info resource-links" href='/all_resources?category=meditation'>All Meditiation Videos</a>
+    <a class="btn btn-outline-info resource-links" href='/all_resources?category=motivational'>All Motivational Videos</a>
+  </div>
+  <div class="col-md-4 justify-content-start external-resources">
+    <h2>External Resources</h2>
+    <ul>
+      <li><%= link_to 'National Suicide Prevention Lifeline', 'https://suicidepreventionlifeline.org/' %></li>
+      <li><%= link_to 'Find a Therapist Near You', 'https://www.sondermind.com/' %></li>
+      <li><%= link_to 'Yoga Classes Near You', 'https://mindbody.io/' %></li>
+    </ul>
+  </div>
+</section>
