@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "7067",
+      "type": "video",
+      "attributes": {
+        "id": "7067",
+        "video_id": "sCWLims7fiI",
+        "title": "How To Maintain Happiness",
+        "description": "Maintaining happiness",
+        "thumbnail_url": "http//thumbail_example.com",
+        "category": "motivational"
+      }
+    },
+    {
+      "id": "7068",
+      "type": "video",
+      "attributes": {
+        "id": "7068",
+        "video_id": "DQt9b3llups",
+        "title": "Yoga & You: How to stay happy?",
+        "description": "Yoga as a means to stay happy",
+        "thumbnail_url": "http//thumbail_example.com",
+        "category": "yoga"
+      }
+    },
+    {
+      "id": "7069",
+      "type": "video",
+      "attributes": {
+        "id": "7069",
+        "video_id": "TFbv757kup4",
+        "title": "Secret To Become Mentally Strong",
+        "description": "TED Talk",
+        "thumbnail_url": "http//thumbail_example.com",
+        "category": "motivational"
+      }
+    }
+  ]
+}
