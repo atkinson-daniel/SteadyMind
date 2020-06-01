@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "7067",
+      "type": "video",
+      "attributes": {
+        "id": "7067",
+        "video_id": "b6IFkfSj4Jo",
+        "title": "20 Minute Relaxation Yoga",
+        "description": "Relaxing and fun!",
+        "thumbnail_url": "http//thumbail_example.com",
+        "category": "yoga"
+      }
+    },
+    {
+      "id": "7068",
+      "type": "video",
+      "attributes": {
+        "id": "7068",
+        "video_id": "67SeR3LxtdI",
+        "title": "Meditate With Your Plants!",
+        "description": "Plants are peaceful and calm just like you'll be!",
+        "thumbnail_url": "http//thumbail_example.com",
+        "category": "meditation"
+      }
+    },
+    {
+      "id": "7069",
+      "type": "video",
+      "attributes": {
+        "id": "7069",
+        "video_id": "smEqnnklfYs",
+        "title": "Inspirational and Sensational",
+        "description": "Get some direction in your life!",
+        "thumbnail_url": "http//thumbail_example.com",
+        "category": "motivational"
+      }
+    }
+  ]
+}

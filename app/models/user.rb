@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :user_moods
   has_many :moods, through: :user_moods
 
+  has_many :user_moods, dependent: :destroy
+
   def self.from_omniauth(auth_info)
     user = User.find_or_create_by(uid: auth_info[:sub])
     user.email = auth_info[:email]
@@ -30,5 +32,25 @@ class User < ApplicationRecord
 
   def mood_query
     self.user_moods.joins(:mood).select(:name).group(:name).count
+  end
+
+  def suggested_videos
+    rating = mood_rating
+    if rating < 1.5
+      VideoResults.new.get_suggested_videos('sad')
+    elsif rating > 1.5 && rating < 2.25
+      VideoResults.new.get_suggested_videos('neutral')
+    elsif rating > 2.25
+      VideoResults.new.get_suggested_videos('happy')
+    end
+  end
+
+  private
+
+  def mood_rating
+    moods = user_moods.where('created_at > ?', 7.days.ago).group(:mood_id).count
+    total = moods.sum { |_, count| count }
+    rating = moods.sum { |mood, count| Mood.find(mood).rating * count }
+    rating / total.to_f
   end
 end
