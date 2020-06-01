@@ -9,9 +9,9 @@ Mood.destroy_all
 User.destroy_all
 UserMood.destroy_all
 user = User.create!(name: 'Tj', email: 'tj@example.com', uid: '12345')
-mood1 = Mood.create!(name: 'worried')
-mood2 = Mood.create!(name: 'neutral_face')
-mood3 = Mood.create!(name: 'smile')
+mood1 = Mood.create!(name: 'worried', rating: 1)
+mood2 = Mood.create!(name: 'neutral_face', rating: 2)
+mood3 = Mood.create!(name: 'smile', rating: 3)
 mood_entry1 = UserMood.create!(user_id: user.id, mood_id: mood1.id, created_at: 'Tue 26 May 2020 21:21:12 UTC +00:00', updated_at: 'Tue 26 May 2020 21:21:12 UTC +00:00')
 mood_entry2 = UserMood.create!(user_id: user.id, mood_id: mood2.id, created_at: 'Wed 27 May 2020 21:21:12 UTC +00:00', updated_at: 'Wed 27 May 2020 21:21:12 UTC +00:00')
 mood_entry3 = UserMood.create!(user_id: user.id, mood_id: mood3.id, created_at: 'Thu 28 May 2020 21:21:12 UTC +00:00', updated_at: 'Thu 28 May 2020 21:21:12 UTC +00:00')
