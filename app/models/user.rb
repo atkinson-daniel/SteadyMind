@@ -32,9 +32,9 @@ class User < ApplicationRecord
     rating = mood_rating
     if rating < 1.5
       VideoResults.new.get_suggested_videos('sad')
-    elsif rating > 1.5 && rating < 2.5
+    elsif rating > 1.5 && rating < 2.25
       VideoResults.new.get_suggested_videos('neutral')
-    elsif rating > 2.5
+    elsif rating > 2.25
       VideoResults.new.get_suggested_videos('happy')
     end
   end
