@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :uid, uniqueness: true
   has_many :user_moods
+  has_many :moods, through: :user_moods
 
   def self.from_omniauth(auth_info)
     user = User.find_or_create_by(uid: auth_info[:sub])
@@ -25,5 +26,9 @@ class User < ApplicationRecord
     entry = UserMood.where(user_id: id,
                            created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
     entry.first
+  end
+
+  def mood_query
+    self.user_moods.joins(:mood).select(:name).group(:name).count
   end
 end
