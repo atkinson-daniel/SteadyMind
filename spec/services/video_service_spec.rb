@@ -19,5 +19,22 @@ describe VideoService do
         expect(yoga_video_data).to have_key :title
       end
     end
+    describe "#get_suggested_videos" do
+      it "returns video based on category" do
+        json_response = File.read('lib/mock/yoga_video.json')
+        stub_request(:get, "https://localhost:3000/api/v1/videos/find_all?category=yoga").
+          to_return(status: 200, body: json_response)
+
+        response = VideoService.new.get_suggested_videos('happy')
+        expect(response).to be_a Hash
+        response_data = response[:data].first[:attributes]
+
+        expect(response_data).to have_key :video_id
+        expect(response_data).to have_key :category
+        expect(response_data).to have_key :description
+        expect(response_data).to have_key :thumbnail_url
+        expect(response_data).to have_key :title
+      end
+    end
   end
 end
