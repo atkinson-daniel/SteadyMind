@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index, :show]
   resources :mood, only: [:create, :update]
 
+  resources :all_resources, only: [:index]
+
   get '/auth/google_oauth2/callback', to: 'sessions#create'
 end

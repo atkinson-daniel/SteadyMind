@@ -11,12 +11,14 @@
 
 <body>
   <%= render template: 'layouts/header'%>
-  <% flash.each do |name, msg| %>
+  <div class="body">
+    <% flash.each do |name, msg| %>
     <div class="<%= flash_class(name.to_sym) %>">
       <p><%= msg %></p>
     </div>
-  <% end %>
-  <%= yield %>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 
 </html>
