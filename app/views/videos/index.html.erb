@@ -11,7 +11,7 @@
             player = new YT.Player('player', {
               width: '100%',
               height: '390px',
-              videoId: '<%= @videos.first.video_id %>',
+              videoId: '<%= @playlist_videos.current_video.video_id %>',
               events: {
                 onReady: onPlayerReady,
               }
@@ -24,8 +24,8 @@
         </script>
       </div>
       <div class='video-links'>
-        <% @videos.each do |video| %>
-          <li><%= link_to video.title, "/all_resources/yoga?video_id=#{video.video_id}" %></li>
+        <% @playlist_videos.videos.each do |video| %>
+          <li><%= link_to video.title, "/videos?video_id=#{video.video_id}" %></li>
         <% end %>
       </div>
     </div>
