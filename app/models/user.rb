@@ -32,6 +32,10 @@ class User < ApplicationRecord
     user_moods.joins(:mood).select(:name).group(:name).count
   end
 
+  def mood_over_time
+    user_moods.joins(:mood).group_by_day(:created_at).sum(:rating)
+  end
+
   def suggested_videos
     rating = mood_rating
     if rating < 1.5
