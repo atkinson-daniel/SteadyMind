@@ -25,9 +25,13 @@ RSpec.describe 'As a user' do
 
       click_on 'Suggested Videos'
 
-      expect(page).to have_link("20 Minute Relaxation Yoga")
-      expect(page).to have_link("Meditate With Your Plants!")
-      expect(page).to have_link("Inspirational and Sensational")
+      expect(page).to have_link "20 Minute Relaxation Yoga"
+      expect(page).to have_link "Meditate With Your Plants!"
+      expect(page).to have_link "Inspirational and Sensational"
+
+      expect(page).to have_link "All Yoga Videos"
+      expect(page).to have_link "All Meditation Videos"
+      expect(page).to have_link "All Motivational Videos"
     end
     it 'I can click Suggested Videos, and view suggested videos based on my mood (neutral)', :vcr do
       expect(current_path).to eq('/dashboard')
@@ -41,9 +45,13 @@ RSpec.describe 'As a user' do
 
       click_on 'Suggested Videos'
 
-      expect(page).to have_link("Day 17 - Happiness Boost Yoga - 30 Days of Yoga")
-      expect(page).to have_link("How To Be Happy - Motivational Speech")
-      expect(page).to have_link("Joy Meditation (Strengthen Happiness)")
+      expect(page).to have_link "Day 17 - Happiness Boost Yoga - 30 Days of Yoga"
+      expect(page).to have_link "How To Be Happy - Motivational Speech"
+      expect(page).to have_link "Joy Meditation (Strengthen Happiness)"
+
+      expect(page).to have_link "All Yoga Videos"
+      expect(page).to have_link "All Meditation Videos"
+      expect(page).to have_link "All Motivational Videos"
     end
     it 'I can click Suggested Videos, and view suggested videos based on my mood (happy)', :vcr do
       expect(current_path).to eq('/dashboard')
@@ -57,8 +65,12 @@ RSpec.describe 'As a user' do
 
       click_on 'Suggested Videos'
 
-      expect(page).to have_link("How To Maintain Happiness")
-      expect(page).to have_link("Yoga & You: How to stay happy?")
-      expect(page).to have_link("Secret To Become Mentally Strong")
+      expect(page).to have_link "How To Maintain Happiness"
+      expect(page).to have_link "Yoga & You: How to stay happy?"
+      expect(page).to have_link "Secret To Become Mentally Strong"
+
+      expect(page).to have_link "All Yoga Videos"
+      expect(page).to have_link "All Meditation Videos"
+      expect(page).to have_link "All Motivational Videos"
     end
 end
