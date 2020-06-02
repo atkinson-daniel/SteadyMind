@@ -10,4 +10,9 @@ class Quote
     quote = QuoteService.new.quote_of_the_day
     Quote.new(quote.first[:q], quote.first[:a])
   end
+
+  def self.random_quote
+    quote = QuoteService.new.random_quote
+    Quote.new(quote.first[:q], quote.first[:a])
+  end
 end
