@@ -9,8 +9,9 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
+    @quote = Quote.random_quote
     flash[:notice] = 'You have been logged out!'
-    redirect_to root_path
+    render 'welcome/index'
   end
 
   private
