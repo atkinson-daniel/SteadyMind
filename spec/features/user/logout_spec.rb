@@ -1,19 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'As a user' do
-  it 'when I visit any page I can logout' do
+  it 'when I visit any page I can logout', :vcr do
     stub_omniauth
-    
+
     visit '/login'
 
     click_on 'Sign In With Google'
 
     click_link 'Logout'
-    
-    expect(current_path).to eq(root_path)
+
     expect(page).to have_link('Sign In')
     expect(page).to have_content('You have been logged out!')
     expect(page).to_not have_link('Logout')
+
+    expect(page).to have_content('Act the way you want to be and soon you\'ll be the way you act')
+    expect(page).to have_content('Les Brown')
   end
 
 end

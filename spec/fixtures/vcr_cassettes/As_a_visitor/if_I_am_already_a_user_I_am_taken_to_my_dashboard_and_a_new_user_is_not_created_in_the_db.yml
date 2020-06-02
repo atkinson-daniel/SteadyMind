@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://zenquotes.io/api/random
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 Jun 2020 02:29:32 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.31
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '138'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: '[ {"q":"Never settle for the crumbs of life.","a":"Og Mandino","h":"<blockquote>&ldquo;Never
+        settle for the crumbs of life.&rdquo; &mdash; <footer>Og Mandino</footer></blockquote>"}
+        ]'
+  recorded_at: Tue, 02 Jun 2020 02:29:32 GMT
+recorded_with: VCR 6.0.0

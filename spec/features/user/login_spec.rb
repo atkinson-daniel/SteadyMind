@@ -9,9 +9,9 @@ RSpec.describe 'As a visitor' do
     expect(current_path).to eq('/login')
   end
 
-  it 'when I visit the login page I can login with Google and the Sign In button now says Logout' do
+  it 'when I visit the login page I can login with Google and the Sign In button now says Logout', :vcr do
     stub_omniauth
-    
+
     visit '/login'
 
     click_on 'Sign In With Google'
@@ -24,18 +24,18 @@ RSpec.describe 'As a visitor' do
     end
   end
 
-  it 'if I am already a user, I am taken to my dashboard and a new user is not created in the db' do
+  it 'if I am already a user, I am taken to my dashboard and a new user is not created in the db', :vcr do
     stub_omniauth
-    
+
     visit '/login'
     click_on 'Sign In With Google'
 
     expect(User.count).to eq(1)
-   
+
     click_on 'Logout'
-    
+
     stub_omniauth
-    
+
     visit '/login'
     click_on 'Sign In With Google'
 
