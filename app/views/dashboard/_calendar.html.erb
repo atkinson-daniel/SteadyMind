@@ -1,6 +1,6 @@
 
 <%= month_calendar events: events do |date, entries| %>
-  <%= date.strftime("%d") %>
+  <span class="thin"><%= date.strftime("%d") %></span>
 
   <% entries.each do |entry| %>
     <div>
