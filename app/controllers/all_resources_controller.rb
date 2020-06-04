@@ -5,7 +5,6 @@ class AllResourcesController < ApplicationController
     video_results = VideoResults.new.create_videos
     params[:category] = 'yoga' if params[:category].nil?
     videos = find_all_by_category(video_results, params[:category])
-    
     @playlist_videos = PlaylistFacade.new(videos, params[:video_id])
   end
 
