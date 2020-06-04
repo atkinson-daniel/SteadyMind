@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://steadymindmicroservice.herokuapp.com/api/v1/videos/neutral
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2033'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Thu, 04 Jun 2020 17:07:07 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"video","attributes":{"title":"UnWind Yoga
+        Flow and Meditation | Faith Hunter","video_id":"e73mrxJVnco","thumbnail_url":"https://i.ytimg.com/vi/e73mrxJVnco/default.jpg","category":"yoga"}},{"id":"2","type":"video","attributes":{"title":"15
+        Minute Guided Meditation To Find Peace In Uncertain Times","video_id":"W19PdslW7iw","thumbnail_url":"https://i.ytimg.com/vi/W19PdslW7iw/default.jpg","category":"meditation"}},{"id":"3","type":"video","attributes":{"title":"Loving
+        Kindness Meditation to Develop Mindfulness and Compassion","video_id":"-d_AA9H4z9U","thumbnail_url":"https://i.ytimg.com/vi/-d_AA9H4z9U/default.jpg","category":"meditation"}},{"id":"4","type":"video","attributes":{"title":"20
+        min Full Body STRETCH/YOGA for STRESS \u0026 ANXIETY Relief","video_id":"sTANio_2E0Q","thumbnail_url":"https://i.ytimg.com/vi/sTANio_2E0Q/default.jpg","category":"yoga"}},{"id":"5","type":"video","attributes":{"title":"Yoga
+        Flow to Boost Energy","video_id":"zsC8bt7kv-w","thumbnail_url":"https://i.ytimg.com/vi/zsC8bt7kv-w/default.jpg","category":"yoga"}},{"id":"6","type":"video","attributes":{"title":"5-Minute
+        Meditation You Can Do Anywhere","video_id":"inpok4MKVLM","thumbnail_url":"https://i.ytimg.com/vi/inpok4MKVLM/default.jpg","category":"meditation"}},{"id":"7","type":"video","attributes":{"title":"The
+        Magic of Not Giving a F*** | Sarah Knight | TEDxCoconutGrove","video_id":"GwRzjFQa_Og","thumbnail_url":"https://i.ytimg.com/vi/GwRzjFQa_Og/default.jpg","category":"motivational"}},{"id":"8","type":"video","attributes":{"title":"The
+        Power of Mindfulness: What You Practice Grows Stronger | Shauna Shapiro |
+        TEDxWashingtonSquare","video_id":"IeblJdB2-Vo","thumbnail_url":"https://i.ytimg.com/vi/IeblJdB2-Vo/default.jpg","category":"motivational"}},{"id":"9","type":"video","attributes":{"title":"Living
+        without shame: How we can empower ourselves | Whitney Thore | TEDxGreensboro","video_id":"aaXBYcfVYZM","thumbnail_url":"https://i.ytimg.com/vi/aaXBYcfVYZM/default.jpg","category":"motivational"}}]}'
+  recorded_at: Thu, 04 Jun 2020 17:07:07 GMT
+recorded_with: VCR 6.0.0

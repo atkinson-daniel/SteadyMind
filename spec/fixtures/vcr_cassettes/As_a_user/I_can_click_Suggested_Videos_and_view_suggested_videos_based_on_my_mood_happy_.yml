@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://steadymindmicroservice.herokuapp.com/api/v1/videos/happy
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1938'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Thu, 04 Jun 2020 17:07:07 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"video","attributes":{"title":"Loving Kindness
+        Meditation","video_id":"sz7cpV7ERsM","thumbnail_url":"https://i.ytimg.com/vi/sz7cpV7ERsM/default.jpg","category":"meditation"}},{"id":"2","type":"video","attributes":{"title":"15
+        Minutes Morning Yoga | Aham Yoga | Yoga with Aru","video_id":"8QuXBo6uPtM","thumbnail_url":"https://i.ytimg.com/vi/8QuXBo6uPtM/default.jpg","category":"yoga"}},{"id":"3","type":"video","attributes":{"title":"Body
+        Meditation","video_id":"bE1sw4EjWjU","thumbnail_url":"https://i.ytimg.com/vi/bE1sw4EjWjU/default.jpg","category":"meditation"}},{"id":"4","type":"video","attributes":{"title":"Ashtanga
+        Fundamentals | 20 minutes class | Laruga Glaser","video_id":"ehNvZ1tKRI0","thumbnail_url":"https://i.ytimg.com/vi/ehNvZ1tKRI0/default.jpg","category":"yoga"}},{"id":"5","type":"video","attributes":{"title":"20-Min
+        Energizing Morning Yoga","video_id":"zuUb12r-pdQ","thumbnail_url":"https://i.ytimg.com/vi/zuUb12r-pdQ/default.jpg","category":"yoga"}},{"id":"6","type":"video","attributes":{"title":"This
+        Breathwork Will Change Your Life","video_id":"1LWi8oTZ8ew","thumbnail_url":"https://i.ytimg.com/vi/1LWi8oTZ8ew/default.jpg","category":"meditation"}},{"id":"7","type":"video","attributes":{"title":"Allow
+        things to unfold and you will find your purpose in life | Peggy Oki | TEDxQueenstown","video_id":"ycB29FkoylE","thumbnail_url":"https://i.ytimg.com/vi/ycB29FkoylE/default.jpg","category":"motivational"}},{"id":"8","type":"video","attributes":{"title":"A
+        10-year old''s vision for healing the planet | Genesis Butler | TEDxCSULB","video_id":"E4ptaIDAIlY","thumbnail_url":"https://i.ytimg.com/vi/E4ptaIDAIlY/default.jpg","category":"motivational"}},{"id":"9","type":"video","attributes":{"title":"The
+        art of being yourself | Caroline McHugh | TEDxMiltonKeynesWomen","video_id":"veEQQ-N9xWU","thumbnail_url":"https://i.ytimg.com/vi/veEQQ-N9xWU/default.jpg","category":"motivational"}}]}'
+  recorded_at: Thu, 04 Jun 2020 17:07:07 GMT
+recorded_with: VCR 6.0.0

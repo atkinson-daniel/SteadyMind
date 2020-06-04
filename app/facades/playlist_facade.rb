@@ -1,4 +1,4 @@
-class PlaylistFacade < SimpleDelegator
+class PlaylistFacade
   attr_reader :videos, :video_id
 
   def initialize(videos, video_id = nil)

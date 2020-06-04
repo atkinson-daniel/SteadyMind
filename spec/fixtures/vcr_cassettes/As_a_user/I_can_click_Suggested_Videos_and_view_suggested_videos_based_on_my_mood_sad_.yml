@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://steadymindmicroservice.herokuapp.com/api/v1/videos/sad
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1959'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Thu, 04 Jun 2020 17:07:07 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"video","attributes":{"title":"Yoga and Breathwork
+        for Stress, Overthinking and Anxiety","video_id":"sfDYlOYqZQw","thumbnail_url":"https://i.ytimg.com/vi/sfDYlOYqZQw/default.jpg","category":"yoga"}},{"id":"2","type":"video","attributes":{"title":"How
+        to Use Breathing Exercises (or Pranayama) to Feel Better in Stressful Situations","video_id":"MpAg5A4-DPI","thumbnail_url":"https://i.ytimg.com/vi/MpAg5A4-DPI/default.jpg","category":"meditation"}},{"id":"3","type":"video","attributes":{"title":"Yoga
+        for mental health - Aham Yoga | Yoga with Aru","video_id":"cNvHeYmmZUo","thumbnail_url":"https://i.ytimg.com/vi/cNvHeYmmZUo/default.jpg","category":"yoga"}},{"id":"4","type":"video","attributes":{"title":"Body
+        Scan Meditation","video_id":"PYsuvRNZfxE","thumbnail_url":"https://i.ytimg.com/vi/PYsuvRNZfxE/default.jpg","category":"meditation"}},{"id":"5","type":"video","attributes":{"title":"Yoga
+        For Anxiety and Stress","video_id":"hJbRpHZr_d0","thumbnail_url":"https://i.ytimg.com/vi/hJbRpHZr_d0/default.jpg","category":"yoga"}},{"id":"6","type":"video","attributes":{"title":"Meditation
+        for Anxiety - Yoga With Adriene","video_id":"4pLUleLdwY4","thumbnail_url":"https://i.ytimg.com/vi/4pLUleLdwY4/default.jpg","category":"yoga"}},{"id":"7","type":"video","attributes":{"title":"How
+        to cope with anxiety | Olivia Remes | TEDxUHasselt","video_id":"WWloIAQpMcQ","thumbnail_url":"https://i.ytimg.com/vi/WWloIAQpMcQ/default.jpg","category":"motivational"}},{"id":"8","type":"video","attributes":{"title":"The
+        Secret of Becoming Mentally Strong | Amy Morin | TEDxOcala","video_id":"TFbv757kup4","thumbnail_url":"https://i.ytimg.com/vi/TFbv757kup4/default.jpg","category":"motivational"}},{"id":"9","type":"video","attributes":{"title":"The
+        Unstoppable Power of Letting Go | Jill Sherer Murray | TEDxWilmingtonWomen","video_id":"nirKw3mWB3I","thumbnail_url":"https://i.ytimg.com/vi/nirKw3mWB3I/default.jpg","category":"motivational"}}]}'
+  recorded_at: Thu, 04 Jun 2020 17:07:07 GMT
+recorded_with: VCR 6.0.0

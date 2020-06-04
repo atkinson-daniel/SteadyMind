@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://steadymindmicroservice.herokuapp.com/api/v1/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5928'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Thu, 04 Jun 2020 17:37:48 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"video","attributes":{"title":"UnWind Yoga
+        Flow and Meditation | Faith Hunter","video_id":"e73mrxJVnco","thumbnail_url":"https://i.ytimg.com/vi/e73mrxJVnco/default.jpg","category":"yoga"}},{"id":"2","type":"video","attributes":{"title":"15
+        Minute Guided Meditation To Find Peace In Uncertain Times","video_id":"W19PdslW7iw","thumbnail_url":"https://i.ytimg.com/vi/W19PdslW7iw/default.jpg","category":"meditation"}},{"id":"3","type":"video","attributes":{"title":"Loving
+        Kindness Meditation to Develop Mindfulness and Compassion","video_id":"-d_AA9H4z9U","thumbnail_url":"https://i.ytimg.com/vi/-d_AA9H4z9U/default.jpg","category":"meditation"}},{"id":"4","type":"video","attributes":{"title":"20
+        min Full Body STRETCH/YOGA for STRESS \u0026 ANXIETY Relief","video_id":"sTANio_2E0Q","thumbnail_url":"https://i.ytimg.com/vi/sTANio_2E0Q/default.jpg","category":"yoga"}},{"id":"5","type":"video","attributes":{"title":"Yoga
+        Flow to Boost Energy","video_id":"zsC8bt7kv-w","thumbnail_url":"https://i.ytimg.com/vi/zsC8bt7kv-w/default.jpg","category":"yoga"}},{"id":"6","type":"video","attributes":{"title":"5-Minute
+        Meditation You Can Do Anywhere","video_id":"inpok4MKVLM","thumbnail_url":"https://i.ytimg.com/vi/inpok4MKVLM/default.jpg","category":"meditation"}},{"id":"7","type":"video","attributes":{"title":"The
+        Magic of Not Giving a F*** | Sarah Knight | TEDxCoconutGrove","video_id":"GwRzjFQa_Og","thumbnail_url":"https://i.ytimg.com/vi/GwRzjFQa_Og/default.jpg","category":"motivational"}},{"id":"8","type":"video","attributes":{"title":"The
+        Power of Mindfulness: What You Practice Grows Stronger | Shauna Shapiro |
+        TEDxWashingtonSquare","video_id":"IeblJdB2-Vo","thumbnail_url":"https://i.ytimg.com/vi/IeblJdB2-Vo/default.jpg","category":"motivational"}},{"id":"9","type":"video","attributes":{"title":"Living
+        without shame: How we can empower ourselves | Whitney Thore | TEDxGreensboro","video_id":"aaXBYcfVYZM","thumbnail_url":"https://i.ytimg.com/vi/aaXBYcfVYZM/default.jpg","category":"motivational"}},{"id":"10","type":"video","attributes":{"title":"Loving
+        Kindness Meditation","video_id":"sz7cpV7ERsM","thumbnail_url":"https://i.ytimg.com/vi/sz7cpV7ERsM/default.jpg","category":"meditation"}},{"id":"11","type":"video","attributes":{"title":"15
+        Minutes Morning Yoga | Aham Yoga | Yoga with Aru","video_id":"8QuXBo6uPtM","thumbnail_url":"https://i.ytimg.com/vi/8QuXBo6uPtM/default.jpg","category":"yoga"}},{"id":"12","type":"video","attributes":{"title":"Body
+        Meditation","video_id":"bE1sw4EjWjU","thumbnail_url":"https://i.ytimg.com/vi/bE1sw4EjWjU/default.jpg","category":"meditation"}},{"id":"13","type":"video","attributes":{"title":"Ashtanga
+        Fundamentals | 20 minutes class | Laruga Glaser","video_id":"ehNvZ1tKRI0","thumbnail_url":"https://i.ytimg.com/vi/ehNvZ1tKRI0/default.jpg","category":"yoga"}},{"id":"14","type":"video","attributes":{"title":"20-Min
+        Energizing Morning Yoga","video_id":"zuUb12r-pdQ","thumbnail_url":"https://i.ytimg.com/vi/zuUb12r-pdQ/default.jpg","category":"yoga"}},{"id":"15","type":"video","attributes":{"title":"This
+        Breathwork Will Change Your Life","video_id":"1LWi8oTZ8ew","thumbnail_url":"https://i.ytimg.com/vi/1LWi8oTZ8ew/default.jpg","category":"meditation"}},{"id":"16","type":"video","attributes":{"title":"Allow
+        things to unfold and you will find your purpose in life | Peggy Oki | TEDxQueenstown","video_id":"ycB29FkoylE","thumbnail_url":"https://i.ytimg.com/vi/ycB29FkoylE/default.jpg","category":"motivational"}},{"id":"17","type":"video","attributes":{"title":"A
+        10-year old''s vision for healing the planet | Genesis Butler | TEDxCSULB","video_id":"E4ptaIDAIlY","thumbnail_url":"https://i.ytimg.com/vi/E4ptaIDAIlY/default.jpg","category":"motivational"}},{"id":"18","type":"video","attributes":{"title":"The
+        art of being yourself | Caroline McHugh | TEDxMiltonKeynesWomen","video_id":"veEQQ-N9xWU","thumbnail_url":"https://i.ytimg.com/vi/veEQQ-N9xWU/default.jpg","category":"motivational"}},{"id":"19","type":"video","attributes":{"title":"Yoga
+        and Breathwork for Stress, Overthinking and Anxiety","video_id":"sfDYlOYqZQw","thumbnail_url":"https://i.ytimg.com/vi/sfDYlOYqZQw/default.jpg","category":"yoga"}},{"id":"20","type":"video","attributes":{"title":"How
+        to Use Breathing Exercises (or Pranayama) to Feel Better in Stressful Situations","video_id":"MpAg5A4-DPI","thumbnail_url":"https://i.ytimg.com/vi/MpAg5A4-DPI/default.jpg","category":"meditation"}},{"id":"21","type":"video","attributes":{"title":"Yoga
+        for mental health - Aham Yoga | Yoga with Aru","video_id":"cNvHeYmmZUo","thumbnail_url":"https://i.ytimg.com/vi/cNvHeYmmZUo/default.jpg","category":"yoga"}},{"id":"22","type":"video","attributes":{"title":"Body
+        Scan Meditation","video_id":"PYsuvRNZfxE","thumbnail_url":"https://i.ytimg.com/vi/PYsuvRNZfxE/default.jpg","category":"meditation"}},{"id":"23","type":"video","attributes":{"title":"Yoga
+        For Anxiety and Stress","video_id":"hJbRpHZr_d0","thumbnail_url":"https://i.ytimg.com/vi/hJbRpHZr_d0/default.jpg","category":"yoga"}},{"id":"24","type":"video","attributes":{"title":"Meditation
+        for Anxiety - Yoga With Adriene","video_id":"4pLUleLdwY4","thumbnail_url":"https://i.ytimg.com/vi/4pLUleLdwY4/default.jpg","category":"yoga"}},{"id":"25","type":"video","attributes":{"title":"How
+        to cope with anxiety | Olivia Remes | TEDxUHasselt","video_id":"WWloIAQpMcQ","thumbnail_url":"https://i.ytimg.com/vi/WWloIAQpMcQ/default.jpg","category":"motivational"}},{"id":"26","type":"video","attributes":{"title":"The
+        Secret of Becoming Mentally Strong | Amy Morin | TEDxOcala","video_id":"TFbv757kup4","thumbnail_url":"https://i.ytimg.com/vi/TFbv757kup4/default.jpg","category":"motivational"}},{"id":"27","type":"video","attributes":{"title":"The
+        Unstoppable Power of Letting Go | Jill Sherer Murray | TEDxWilmingtonWomen","video_id":"nirKw3mWB3I","thumbnail_url":"https://i.ytimg.com/vi/nirKw3mWB3I/default.jpg","category":"motivational"}}]}'
+  recorded_at: Thu, 04 Jun 2020 17:37:49 GMT
+- request:
+    method: get
+    uri: https://steadymindmicroservice.herokuapp.com/api/v1/videos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5928'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Thu, 04 Jun 2020 17:37:49 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"video","attributes":{"title":"UnWind Yoga
+        Flow and Meditation | Faith Hunter","video_id":"e73mrxJVnco","thumbnail_url":"https://i.ytimg.com/vi/e73mrxJVnco/default.jpg","category":"yoga"}},{"id":"2","type":"video","attributes":{"title":"15
+        Minute Guided Meditation To Find Peace In Uncertain Times","video_id":"W19PdslW7iw","thumbnail_url":"https://i.ytimg.com/vi/W19PdslW7iw/default.jpg","category":"meditation"}},{"id":"3","type":"video","attributes":{"title":"Loving
+        Kindness Meditation to Develop Mindfulness and Compassion","video_id":"-d_AA9H4z9U","thumbnail_url":"https://i.ytimg.com/vi/-d_AA9H4z9U/default.jpg","category":"meditation"}},{"id":"4","type":"video","attributes":{"title":"20
+        min Full Body STRETCH/YOGA for STRESS \u0026 ANXIETY Relief","video_id":"sTANio_2E0Q","thumbnail_url":"https://i.ytimg.com/vi/sTANio_2E0Q/default.jpg","category":"yoga"}},{"id":"5","type":"video","attributes":{"title":"Yoga
+        Flow to Boost Energy","video_id":"zsC8bt7kv-w","thumbnail_url":"https://i.ytimg.com/vi/zsC8bt7kv-w/default.jpg","category":"yoga"}},{"id":"6","type":"video","attributes":{"title":"5-Minute
+        Meditation You Can Do Anywhere","video_id":"inpok4MKVLM","thumbnail_url":"https://i.ytimg.com/vi/inpok4MKVLM/default.jpg","category":"meditation"}},{"id":"7","type":"video","attributes":{"title":"The
+        Magic of Not Giving a F*** | Sarah Knight | TEDxCoconutGrove","video_id":"GwRzjFQa_Og","thumbnail_url":"https://i.ytimg.com/vi/GwRzjFQa_Og/default.jpg","category":"motivational"}},{"id":"8","type":"video","attributes":{"title":"The
+        Power of Mindfulness: What You Practice Grows Stronger | Shauna Shapiro |
+        TEDxWashingtonSquare","video_id":"IeblJdB2-Vo","thumbnail_url":"https://i.ytimg.com/vi/IeblJdB2-Vo/default.jpg","category":"motivational"}},{"id":"9","type":"video","attributes":{"title":"Living
+        without shame: How we can empower ourselves | Whitney Thore | TEDxGreensboro","video_id":"aaXBYcfVYZM","thumbnail_url":"https://i.ytimg.com/vi/aaXBYcfVYZM/default.jpg","category":"motivational"}},{"id":"10","type":"video","attributes":{"title":"Loving
+        Kindness Meditation","video_id":"sz7cpV7ERsM","thumbnail_url":"https://i.ytimg.com/vi/sz7cpV7ERsM/default.jpg","category":"meditation"}},{"id":"11","type":"video","attributes":{"title":"15
+        Minutes Morning Yoga | Aham Yoga | Yoga with Aru","video_id":"8QuXBo6uPtM","thumbnail_url":"https://i.ytimg.com/vi/8QuXBo6uPtM/default.jpg","category":"yoga"}},{"id":"12","type":"video","attributes":{"title":"Body
+        Meditation","video_id":"bE1sw4EjWjU","thumbnail_url":"https://i.ytimg.com/vi/bE1sw4EjWjU/default.jpg","category":"meditation"}},{"id":"13","type":"video","attributes":{"title":"Ashtanga
+        Fundamentals | 20 minutes class | Laruga Glaser","video_id":"ehNvZ1tKRI0","thumbnail_url":"https://i.ytimg.com/vi/ehNvZ1tKRI0/default.jpg","category":"yoga"}},{"id":"14","type":"video","attributes":{"title":"20-Min
+        Energizing Morning Yoga","video_id":"zuUb12r-pdQ","thumbnail_url":"https://i.ytimg.com/vi/zuUb12r-pdQ/default.jpg","category":"yoga"}},{"id":"15","type":"video","attributes":{"title":"This
+        Breathwork Will Change Your Life","video_id":"1LWi8oTZ8ew","thumbnail_url":"https://i.ytimg.com/vi/1LWi8oTZ8ew/default.jpg","category":"meditation"}},{"id":"16","type":"video","attributes":{"title":"Allow
+        things to unfold and you will find your purpose in life | Peggy Oki | TEDxQueenstown","video_id":"ycB29FkoylE","thumbnail_url":"https://i.ytimg.com/vi/ycB29FkoylE/default.jpg","category":"motivational"}},{"id":"17","type":"video","attributes":{"title":"A
+        10-year old''s vision for healing the planet | Genesis Butler | TEDxCSULB","video_id":"E4ptaIDAIlY","thumbnail_url":"https://i.ytimg.com/vi/E4ptaIDAIlY/default.jpg","category":"motivational"}},{"id":"18","type":"video","attributes":{"title":"The
+        art of being yourself | Caroline McHugh | TEDxMiltonKeynesWomen","video_id":"veEQQ-N9xWU","thumbnail_url":"https://i.ytimg.com/vi/veEQQ-N9xWU/default.jpg","category":"motivational"}},{"id":"19","type":"video","attributes":{"title":"Yoga
+        and Breathwork for Stress, Overthinking and Anxiety","video_id":"sfDYlOYqZQw","thumbnail_url":"https://i.ytimg.com/vi/sfDYlOYqZQw/default.jpg","category":"yoga"}},{"id":"20","type":"video","attributes":{"title":"How
+        to Use Breathing Exercises (or Pranayama) to Feel Better in Stressful Situations","video_id":"MpAg5A4-DPI","thumbnail_url":"https://i.ytimg.com/vi/MpAg5A4-DPI/default.jpg","category":"meditation"}},{"id":"21","type":"video","attributes":{"title":"Yoga
+        for mental health - Aham Yoga | Yoga with Aru","video_id":"cNvHeYmmZUo","thumbnail_url":"https://i.ytimg.com/vi/cNvHeYmmZUo/default.jpg","category":"yoga"}},{"id":"22","type":"video","attributes":{"title":"Body
+        Scan Meditation","video_id":"PYsuvRNZfxE","thumbnail_url":"https://i.ytimg.com/vi/PYsuvRNZfxE/default.jpg","category":"meditation"}},{"id":"23","type":"video","attributes":{"title":"Yoga
+        For Anxiety and Stress","video_id":"hJbRpHZr_d0","thumbnail_url":"https://i.ytimg.com/vi/hJbRpHZr_d0/default.jpg","category":"yoga"}},{"id":"24","type":"video","attributes":{"title":"Meditation
+        for Anxiety - Yoga With Adriene","video_id":"4pLUleLdwY4","thumbnail_url":"https://i.ytimg.com/vi/4pLUleLdwY4/default.jpg","category":"yoga"}},{"id":"25","type":"video","attributes":{"title":"How
+        to cope with anxiety | Olivia Remes | TEDxUHasselt","video_id":"WWloIAQpMcQ","thumbnail_url":"https://i.ytimg.com/vi/WWloIAQpMcQ/default.jpg","category":"motivational"}},{"id":"26","type":"video","attributes":{"title":"The
+        Secret of Becoming Mentally Strong | Amy Morin | TEDxOcala","video_id":"TFbv757kup4","thumbnail_url":"https://i.ytimg.com/vi/TFbv757kup4/default.jpg","category":"motivational"}},{"id":"27","type":"video","attributes":{"title":"The
+        Unstoppable Power of Letting Go | Jill Sherer Murray | TEDxWilmingtonWomen","video_id":"nirKw3mWB3I","thumbnail_url":"https://i.ytimg.com/vi/nirKw3mWB3I/default.jpg","category":"motivational"}}]}'
+  recorded_at: Thu, 04 Jun 2020 17:37:49 GMT
+recorded_with: VCR 6.0.0
