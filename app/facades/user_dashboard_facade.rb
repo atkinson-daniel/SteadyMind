@@ -7,7 +7,15 @@ class UserDashboardFacade < SimpleDelegator
     mood_entry.id
   end
 
+  def user_entry
+    mood_entry.entry
+  end
+
   def user_selected_mood
     mood_entry.mood_id
+  end
+
+  def user_calendar_entries
+    calendar_entries
   end
 end

@@ -3,13 +3,13 @@ class MoodController < ApplicationController
 
   def create
     mood = Mood.find_by(id: mood_params[:id])
-    usermood = UserMood.new(user: current_user, mood: mood)
+    usermood = UserMood.new(user: current_user, mood: mood, entry: params[:entry])
     usermood.save ? success : error
     redirect_to dashboard_index_path
   end
 
   def update
-    success if UserMood.update(params[:id], mood_id: mood_params[:id])
+    success if UserMood.update(params[:id], mood_id: mood_params[:id], entry: params[:entry])
     redirect_to dashboard_index_path
   end
 
