@@ -6,6 +6,7 @@
         <h5 class="card-title">How are you?</h5>
         <p class="card-text">
           <%= form_tag "/mood" do %>
+            <%= text_field_tag :entry, nil, placeholder: "I'm feeling..." %>
             <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji %>
             <br />
             <%= submit_tag "Submit" %>
