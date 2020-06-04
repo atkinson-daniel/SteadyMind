@@ -3,6 +3,8 @@ class VideosController < ApplicationController
 
   def index
     videos = current_user.suggested_videos
+    return if videos.nil?
+
     params[:category] = 'yoga' if params[:category].nil?
     videos = videos.select { |video| video.category == params[:category] }
     @facade = PlaylistFacade.new(videos, params[:video_id])

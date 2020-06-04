@@ -79,7 +79,7 @@ RSpec.describe 'As a user' do
 
       click_on 'Suggested Videos'
 
-      expect(page).to have_content "No video to display"
+      expect(page).to have_content "No videos to display - Please return to your dashboard and log your mood"
     end
 
 end
