@@ -93,7 +93,6 @@ RSpec.configure do |config|
     config.filter_sensitive_data('<GOOGLE_CLIENT_ID>') { ENV['GOOGLE_CLIENT_ID'] }
     config.filter_sensitive_data('<GOOGLE_CLIENT_SECRET>') { ENV['GOOGLE_CLIENT_SECRET'] }
     config.configure_rspec_metadata!
-    config.allow_http_connections_when_no_cassette = true
   end
 
 end
