@@ -1,6 +1,8 @@
 <section class='container'>
-  <section class='row'>
-    <div class="col-md-6 justify-content-start">
+  <section class='row content'>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-6">
       <h2>Suggested Videos</h2>
       <% unless @playlist_videos.current_video.nil? %>
         <div id="player">
@@ -12,15 +14,8 @@
               player = new YT.Player('player', {
                 width: '100%',
                 height: '390px',
-                videoId: '<%= @playlist_videos.current_video.video_id %>',
-                events: {
-                  onReady: onPlayerReady,
-                }
+                videoId: '<%= @playlist_videos.current_video.video_id %>'
               });
-            }
-
-            function onPlayerReady(event) {
-              event.target.playVideo();
             }
           </script>
         </div>
@@ -35,7 +30,7 @@
       <% end %>
       </div>
     </div>
-    <div class="additional-resources col-md-2 justify-content-start">
+    <div class="additional-resources col-md-2">
       <a class="btn btn-outline-info resource-links" href='/videos?category=yoga'>All Yoga Videos</a>
       <a class="btn btn-outline-info resource-links" href='/videos?category=meditation'>All Meditation Videos</a>
       <a class="btn btn-outline-info resource-links" href='/videos?category=motivational'>All Motivational Videos</a>
