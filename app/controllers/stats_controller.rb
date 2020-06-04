@@ -1,3 +1,5 @@
 class StatsController < ApplicationController
-  def index; end
+  before_action :require_user
+
+  def index;  end
 end
