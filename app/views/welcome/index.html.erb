@@ -8,7 +8,7 @@
           <p class="display-5 mb-0">"<%= @quote.quote %>"</p>
           <footer class="blockquote-footer"><%= @quote.author %></footer>
         </blockquote>
-        <p>Click here to <a href="/login">sign in</a> again.</p>
+        <p>Click here to <%= link_to  'sign in', '/auth/google_oauth2' %> again.</p>
     </section>
     </div>
   </section>
@@ -23,7 +23,7 @@
         <section id ="title" class="text-center">
           <p class="display-4 bold">Welcome to <span class="display-4">SteadyMind</span></p>
           <p class="lead">Log your mood daily to track your mental health.</p>
-          <p>Get started by <a href="/login">signing in</a> with your Google account.</p>
+          <p>Get started by <%= link_to  'signing in', '/auth/google_oauth2' %> with your Google account.</p>
         </section>
         </div>
       </section>

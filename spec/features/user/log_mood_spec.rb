@@ -9,14 +9,13 @@ RSpec.describe 'As a user', :vcr do
   it 'once logged in, I\'m redirected to a page where I can log my mood.', :vcr do
     stub_omniauth
 
-    visit '/login'
+    visit '/'
 
-    click_on 'Sign In With Google'
+    click_on 'signing in'
     user = User.last
 
     expect(current_path).to eq('/dashboard')
 
-    expect(page).to have_content 'Please share your mood today to see your profile. You can always edit it later.'
     click_on 'Submit'
 
     expect(page).to have_content 'There was an error!'
@@ -33,9 +32,9 @@ RSpec.describe 'As a user', :vcr do
   it 'if I already logged a mood, I can edit the mood from my dashboard.', :vcr do
     stub_omniauth
 
-    visit '/login'
+    visit '/'
 
-    click_on 'Sign In With Google'
+    click_on 'signing in'
     user = User.last
 
     expect(current_path).to eq('/dashboard')
@@ -49,8 +48,8 @@ RSpec.describe 'As a user', :vcr do
     expect(mood_entry.mood_id).to eq @mood2.id
     expect(mood_entry.entry).to eq "I'm feeling okay"
 
-    expect(page).to have_content 'Edit Mood'
-    
+    expect(page).to have_content 'Edit Today\'s Mood'
+
     within('#edit-mood') do
       expect(page).to have_field(:entry, with: "I'm feeling okay")
     end
