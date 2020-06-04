@@ -1,6 +1,6 @@
 class VideoResults
   def create_videos
-    response = VideoService.new.get_videos
+    response = VideoService.new.all_videos
     parse_video_info(response)
   end
 

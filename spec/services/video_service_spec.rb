@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe VideoService do
   describe "instance methods" do
-    describe "#get_videos" do
+    describe "#all_videos" do
       it "returns videos" do
-        videos = VideoService.new.get_videos
+        videos = VideoService.new.all_videos
         expect(videos).to be_a Hash
         video_data = videos[:data].first[:attributes]
 
