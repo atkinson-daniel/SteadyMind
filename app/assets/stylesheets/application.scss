@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
  */
 @import "bootstrap";
 
@@ -31,4 +32,26 @@
 
 .card-body form input[type="radio"] {
   margin-left: 15px;
+}
+
+.simple-calendar {
+  .day div{
+    padding-left: 20px;
+    font-size: 25px;
+  }
+}
+
+.calendar-title{
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.calendar-heading a{
+  font-size: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #ffffff;
 }
