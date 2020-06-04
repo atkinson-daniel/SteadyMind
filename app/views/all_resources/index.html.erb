@@ -3,7 +3,7 @@
     <div class="col-md-2">
     </div>
     <div class="col-md-6">
-      <h2>All <%= @playlist_videos.current_video.category.capitalize %> Videos</h2>
+      <h2>All <%= @facade.videos.first.category.capitalize %> Videos</h2>
       <div id="player">
         <script src="https://www.youtube.com/player_api" ></script>
         <script>
@@ -13,17 +13,18 @@
             player = new YT.Player('player', {
               width: '100%',
               height: '390px',
-              videoId: '<%= @playlist_videos.current_video.video_id %>'
+              videoId: '<%= @facade.current_video.video_id %>'
             });
           }
         </script>
       </div>
       <div class='video-links'>
         <ul class="list-group">
-        <% @playlist_videos.videos.each do |video| %>
+        <% @playlist_items.each do |video| %>
           <li class="list-group-item"><%= link_to video.title, "/all_resources?video_id=#{video.video_id}&category=#{video.category}" %></li>
         <% end %>
         </ul>
+        <%= will_paginate @playlist_items, :container => false %>
       </div>
     </div>
     <div class="additional-resources col-md-2">
@@ -32,6 +33,7 @@
       <a class="btn btn-outline-info resource-links" href='/all_resources?category=motivational'>All Motivational Videos</a>
     </div>
   </section>
+  <br>
   <section class='row content'>
     <div class="col-md-2">
     </div>
