@@ -37,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def calendar_entries
-    moods = user_moods.select("user_moods.*, moods.name AS name").joins(:mood)
+    moods = user_moods.select('user_moods.*, moods.name AS name').joins(:mood)
     moods.map do |mood|
       info = { start_time: mood[:created_at],
                entry: mood[:entry],
