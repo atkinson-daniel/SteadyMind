@@ -58,11 +58,11 @@ RSpec.describe 'As a user' do
     it 'Can play a different video in the playlist', :vcr do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      expected_video_id = 'hJbRpHZr_d0'
+      expected_video_id = 'zsC8bt7kv-w'
 
       visit '/dashboard'
       click_link 'All Resources'
-      click_link 'Yoga For Anxiety and Stress'
+      click_link 'Yoga Flow to Boost Energy'
       expect(current_url).to include(expected_video_id)
       expect(current_url).to include('yoga')
     end
