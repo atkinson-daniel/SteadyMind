@@ -16,18 +16,18 @@ RSpec.describe 'As a user' do
     it 'I can click Suggested Videos, and view suggested videos based on my mood (sad)', :vcr do
       expect(current_path).to eq('/dashboard')
 
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 Feb 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Wed 27 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood1, created_at: 'Thu 28 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood1, created_at: 'Fri 29 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood1, created_at: 'Sat 30 May 2020 21:21:12 UTC +00:00')
+      UserMood.create!(user: @user, mood: @mood1, created_at: Date.today - 5)
+      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today - 4)
+      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today - 3)
+      UserMood.create!(user: @user, mood: @mood1, created_at: Date.today - 2)
+      UserMood.create!(user: @user, mood: @mood1, created_at: Date.today - 1)
+      UserMood.create!(user: @user, mood: @mood1, created_at: Date.today)
 
       click_on 'Suggested Videos'
 
-      expect(page).to have_link "20 Minute Relaxation Yoga"
-      expect(page).to have_link "Meditate With Your Plants!"
-      expect(page).to have_link "Inspirational and Sensational"
+      expect(page).to have_link "Yoga and Breathwork for Stress, Overthinking and Anxiety"
+      expect(page).to have_link "Yoga for mental health - Aham Yoga | Yoga with Aru"
+      expect(page).to have_link "Yoga For Anxiety and Stress"
 
       expect(page).to have_link "All Yoga Videos"
       expect(page).to have_link "All Meditation Videos"
@@ -36,43 +36,44 @@ RSpec.describe 'As a user' do
     it 'I can click Suggested Videos, and view suggested videos based on my mood (neutral)', :vcr do
       expect(current_path).to eq('/dashboard')
 
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 Feb 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Tue 26 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Wed 27 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Thu 28 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood3, created_at: 'Fri 29 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood1, created_at: 'Sat 30 May 2020 21:21:12 UTC +00:00')
+      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today - 5)
+      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today - 4)
+      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today - 3)
+      UserMood.create!(user: @user, mood: @mood3, created_at: Date.today - 2)
+      UserMood.create!(user: @user, mood: @mood1, created_at: Date.today - 1)
+      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today)
 
       click_on 'Suggested Videos'
 
-      expect(page).to have_link "Day 17 - Happiness Boost Yoga - 30 Days of Yoga"
-      expect(page).to have_link "How To Be Happy - Motivational Speech"
-      expect(page).to have_link "Joy Meditation (Strengthen Happiness)"
+      expect(page).to have_link "UnWind Yoga Flow and Meditation | Faith Hunter"
+      expect(page).to have_link "20 min Full Body STRETCH/YOGA for STRESS & ANXIETY Relief"
+      expect(page).to have_link "Yoga Flow to Boost Energy"
 
       expect(page).to have_link "All Yoga Videos"
       expect(page).to have_link "All Meditation Videos"
       expect(page).to have_link "All Motivational Videos"
     end
+
     it 'I can click Suggested Videos, and view suggested videos based on my mood (happy)', :vcr do
       expect(current_path).to eq('/dashboard')
 
-      UserMood.create!(user: @user, mood: @mood3, created_at: 'Tue 26 Feb 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood3, created_at: 'Tue 26 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood3, created_at: 'Wed 27 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood2, created_at: 'Thu 28 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood1, created_at: 'Fri 29 May 2020 21:21:12 UTC +00:00')
-      UserMood.create!(user: @user, mood: @mood3, created_at: 'Sat 30 May 2020 21:21:12 UTC +00:00')
-
+      UserMood.create!(user: @user, mood: @mood3, created_at: Date.today - 5)
+      UserMood.create!(user: @user, mood: @mood3, created_at: Date.today - 4)
+      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today - 3)
+      UserMood.create!(user: @user, mood: @mood1, created_at: Date.today - 2)
+      UserMood.create!(user: @user, mood: @mood3, created_at: Date.today - 1)
+      UserMood.create!(user: @user, mood: @mood3, created_at: Date.today)
       click_on 'Suggested Videos'
 
-      expect(page).to have_link "How To Maintain Happiness"
-      expect(page).to have_link "Yoga & You: How to stay happy?"
-      expect(page).to have_link "Secret To Become Mentally Strong"
+      expect(page).to have_link "15 Minutes Morning Yoga | Aham Yoga | Yoga with Aru"
+      expect(page).to have_link "Ashtanga Fundamentals | 20 minutes class | Laruga Glaser"
+      expect(page).to have_link "20-Min Energizing Morning Yoga"
 
       expect(page).to have_link "All Yoga Videos"
       expect(page).to have_link "All Meditation Videos"
       expect(page).to have_link "All Motivational Videos"
     end
+
     it 'I can click Suggested Videos but I have not logged my mood', :vcr do
       expect(current_path).to eq('/dashboard')
 
