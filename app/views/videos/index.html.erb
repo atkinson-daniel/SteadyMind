@@ -3,8 +3,8 @@
     <div class="col-md-2">
     </div>
     <div class="col-md-6">
-      <h2>Suggested Videos</h2>
-      <% unless @playlist_videos.current_video.nil? %>
+      <h2>Suggested <%= @facade.videos.first.category.capitalize %> Videos</h2>
+      <% unless @facade.current_video.nil? %>
         <div id="player">
           <script src="https://www.youtube.com/player_api" ></script>
           <script>
@@ -14,7 +14,7 @@
               player = new YT.Player('player', {
                 width: '100%',
                 height: '390px',
-                videoId: '<%= @playlist_videos.current_video.video_id %>'
+                videoId: '<%= @facade.current_video.video_id %>'
               });
             }
           </script>
@@ -23,19 +23,20 @@
         No video to display
       <% end %>
       <div class='video-links'>
-      <% unless @playlist_videos.videos.nil? %>
+      <% unless @facade.videos.nil? %>
         <ul class="list-group">
-          <% @playlist_videos.videos.each do |video| %>
+          <% @playlist_items.each do |video| %>
           <li class="list-group-item"><%= link_to video.title, "/videos?video_id=#{video.video_id}" %></li>
           <% end %>
         </ul>
+        <%= will_paginate @playlist_items, :container => false %>
       <% end %>
       </div>
     </div>
     <div class="additional-resources col-md-2">
-      <a class="btn btn-outline-info resource-links" href='/videos?category=yoga'>All Yoga Videos</a>
-      <a class="btn btn-outline-info resource-links" href='/videos?category=meditation'>All Meditation Videos</a>
-      <a class="btn btn-outline-info resource-links" href='/videos?category=motivational'>All Motivational Videos</a>
+      <a class="btn btn-outline-info resource-links" href='/videos?category=yoga'>Suggested Yoga Videos</a>
+      <a class="btn btn-outline-info resource-links" href='/videos?category=meditation'>Suggested Meditation Videos</a>
+      <a class="btn btn-outline-info resource-links" href='/videos?category=motivational'>Suggested Motivational Videos</a>
     </div>
   </section>
 </section>
