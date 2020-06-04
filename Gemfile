@@ -40,6 +40,8 @@ gem 'jquery-rails'
 gem 'figaro'
 gem "chartkick"
 gem 'groupdate'
+gem 'sendgrid-ruby'
+gem "sidekiq"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
