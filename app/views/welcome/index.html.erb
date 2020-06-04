@@ -1,16 +1,32 @@
+<% if @quote %>
 <section class='container'>
+  <center>
   <section class='row'>
-    <div class="col-md-7 justify-content-start">
-
-    <% if @quote %>
+    <div class="col-md-12 justify-content-start">
     <section id = "random-zen-quote">
         <blockquote class="blockquote">
           <p class="display-5 mb-0">"<%= @quote.quote %>"</p>
           <footer class="blockquote-footer"><%= @quote.author %></footer>
         </blockquote>
+        <p>Click here to <a href="/login">sign in</a> again.</p>
     </section>
-    <% end %>
-
     </div>
   </section>
+</center>
 </section>
+<% else %>
+  <div id = "homepage">
+    <section class='container'>
+      <section class='row'>
+        <div class="col-md-12 justify-content-start">
+
+        <section id ="title" class="text-center">
+          <p class="display-4">Welcome to <span class="bold">SteadyMind</span></p>
+          <p class="lead">Log your mood daily to track your mental health.</p>
+          <p>Get started by <a href="/login">signing in</a> with your Google account.</p>
+        </section>
+        </div>
+      </section>
+    </section>
+  </div>
+<% end %>
