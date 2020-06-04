@@ -3,7 +3,7 @@ require 'rails_helper'
 describe VideoService do
   describe "instance methods" do
     describe "#all_videos" do
-      it "returns videos" do
+      it "returns videos", :vcr do
         videos = VideoService.new.all_videos
         expect(videos).to be_a Hash
         video_data = videos[:data].first[:attributes]
@@ -16,7 +16,7 @@ describe VideoService do
     end
 
     describe "#get_suggested_videos" do
-      it "returns video based on category" do
+      it "returns video based on category", :vcr do
         response = VideoService.new.get_suggested_videos('happy')
         expect(response).to be_a Hash
         response_data = response[:data].first[:attributes]
