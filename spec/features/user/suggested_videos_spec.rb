@@ -29,9 +29,9 @@ RSpec.describe 'As a user' do
       expect(page).to have_link "Yoga for mental health - Aham Yoga | Yoga with Aru"
       expect(page).to have_link "Yoga For Anxiety and Stress"
 
-      expect(page).to have_link "All Yoga Videos"
-      expect(page).to have_link "All Meditation Videos"
-      expect(page).to have_link "All Motivational Videos"
+      expect(page).to have_link "Suggested Yoga Videos"
+      expect(page).to have_link "Suggested Meditation Videos"
+      expect(page).to have_link "Suggested Motivational Videos"
     end
     it 'I can click Suggested Videos, and view suggested videos based on my mood (neutral)', :vcr do
       expect(current_path).to eq('/dashboard')
@@ -49,9 +49,9 @@ RSpec.describe 'As a user' do
       expect(page).to have_link "20 min Full Body STRETCH/YOGA for STRESS & ANXIETY Relief"
       expect(page).to have_link "Yoga Flow to Boost Energy"
 
-      expect(page).to have_link "All Yoga Videos"
-      expect(page).to have_link "All Meditation Videos"
-      expect(page).to have_link "All Motivational Videos"
+      expect(page).to have_link "Suggested Yoga Videos"
+      expect(page).to have_link "Suggested Meditation Videos"
+      expect(page).to have_link "Suggested Motivational Videos"
     end
 
     it 'I can click Suggested Videos, and view suggested videos based on my mood (happy)', :vcr do
@@ -69,9 +69,9 @@ RSpec.describe 'As a user' do
       expect(page).to have_link "Ashtanga Fundamentals | 20 minutes class | Laruga Glaser"
       expect(page).to have_link "20-Min Energizing Morning Yoga"
 
-      expect(page).to have_link "All Yoga Videos"
-      expect(page).to have_link "All Meditation Videos"
-      expect(page).to have_link "All Motivational Videos"
+      expect(page).to have_link "Suggested Yoga Videos"
+      expect(page).to have_link "Suggested Meditation Videos"
+      expect(page).to have_link "Suggested Motivational Videos"
     end
 
     it 'I can click Suggested Videos but I have not logged my mood', :vcr do
