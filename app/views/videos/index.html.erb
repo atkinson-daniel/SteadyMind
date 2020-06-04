@@ -24,9 +24,11 @@
       <% end %>
       <div class='video-links'>
       <% unless @playlist_videos.videos.nil? %>
-        <% @playlist_videos.videos.each do |video| %>
-          <li><%= link_to video.title, "/videos?video_id=#{video.video_id}" %></li>
-        <% end %>
+        <ul class="list-group">
+          <% @playlist_videos.videos.each do |video| %>
+          <li class="list-group-item"><%= link_to video.title, "/videos?video_id=#{video.video_id}" %></li>
+          <% end %>
+        </ul>
       <% end %>
       </div>
     </div>

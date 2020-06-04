@@ -19,9 +19,11 @@
         </script>
       </div>
       <div class='video-links'>
+        <ul class="list-group">
         <% @playlist_videos.videos.each do |video| %>
-          <li><%= link_to video.title, "/all_resources?video_id=#{video.video_id}&category=#{video.category}" %></li>
+          <li class="list-group-item"><%= link_to video.title, "/all_resources?video_id=#{video.video_id}&category=#{video.category}" %></li>
         <% end %>
+        </ul>
       </div>
     </div>
     <div class="additional-resources col-md-2">
@@ -33,12 +35,12 @@
   <section class='row content'>
     <div class="col-md-2">
     </div>
-    <div class="external-resources col-md-4 ">
+    <div class="external-resources col-md-6">
       <h2>External Resources</h2>
-      <ul>
-        <li><%= link_to 'National Suicide Prevention Lifeline', 'https://suicidepreventionlifeline.org/' %></li>
-        <li><%= link_to 'Find a Therapist Near You', 'https://www.sondermind.com/' %></li>
-        <li><%= link_to 'Yoga Classes Near You', 'https://mindbody.io/' %></li>
+      <ul class="list-group">
+        <li class="list-group-item"><%= link_to 'National Suicide Prevention Lifeline', 'https://suicidepreventionlifeline.org/' %></li>
+        <li class="list-group-item"><%= link_to 'Find a Therapist Near You', 'https://www.sondermind.com/' %></li>
+        <li class="list-group-item"><%= link_to 'Yoga Classes Near You', 'https://mindbody.io/' %></li>
       </ul>
     </div>
   </section>
