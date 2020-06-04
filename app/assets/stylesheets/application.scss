@@ -22,36 +22,156 @@
   width: 100%;
 }
 
-.body {
-  padding: 15px;
-}
+#entry {
+  width: 100%;
 
-.card-body form{
-  font-size: 24px;
-}
+  .card-body form{
+    font-size: 24px;
+  }
 
-.card-body form input[type="radio"] {
-  margin-left: 15px;
-}
+  .card-body form input[type="radio"] {
+    margin-left: 15px;
+  }
 
-.simple-calendar {
-  .day div{
-    padding-left: 20px;
-    font-size: 25px;
+  .card-body form input[type="text"]{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .card-body form input[type="submit"]{
+    background: #2EA9B2;
+    border: none;
+  }
+
+  .card-body h5 {
+    font-weight: 100;
   }
 }
 
-.calendar-title{
-  font-weight: 800;
-  font-size: 20px;
+
+#calendar{
+  margin-bottom: 40px;
+
+  .simple-calendar {
+    .day div{
+      padding-left: 20px;
+      font-size: 25px;
+    }
+
+    .previous-month {
+        background: #F2F2F2;
+    }
+
+    .next-month {
+        background: #F2F2F2;
+    }
+
+    .table thead th {
+      font-weight: 200;
+    }
+  }
+
+  .calendar-title{
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .calendar-heading a{
+    font-size: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #2EA9B2;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background: #ffffff;
+  }
+
+  .table-striped tbody tr:nth-of-type(even) {
+    background: #ffffff;
+  }
 }
 
-.calendar-heading a{
-  font-size: 25px;
-  margin-left: 5px;
-  margin-right: 5px;
+#homepage {
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1529528744093-6f8abeee511d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-position: 10% 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-  background: #ffffff;
+#title {
+  margin-top: 140px;
+  color: #F2F2F2;
+
+  a {
+    text-decoration: none;
+    color: #F2F2F2;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #F2F2F2;
+  }
+
+  a:hover {
+    background: #FB9C96;
+  }
+}
+
+.bold {
+  font-weight: 100;
+}
+
+.thin {
+  font-weight: 250;
+}
+
+#daily-zen-quote {
+  margin-top: 20px;
+}
+
+#entry {
+  padding: 5px;
+}
+
+#mood-entry{
+  margin-top: 50px;
+}
+
+.box-shadow{
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+               -20px -20px 60px #ffffff;
+
+}
+
+#nav-logged-in {
+  background: #2EA9B2;
+
+  a {
+    color: #F2F2F2;
+  }
+}
+
+.content {
+  margin-top: 20px;
+}
+
+#random-zen-quote {
+  a {
+    text-decoration: none;
+    color: black;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000000;
+  }
+
+  a:hover {
+    color: #F2F2F2;
+    background: #FB9C96;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #F2F2F2;
+  }
+}
+
+a {
+  color: #2EA9B2;
 }

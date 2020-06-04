@@ -1,6 +1,8 @@
 <section class='container'>
   <section class='row'>
-    <div class="col-md-6 justify-content-start">
+    <div class="col content">
+    <center>
+      <div class="col-md-6 justify-content-start">
       <h1>Stats</h1>
 
       <%= link_to "Pie Chart", stats_path(chart: :pie) %> | <%= link_to "Line Chart", stats_path(chart: :line) %>
@@ -13,6 +15,8 @@
         <%= line_chart current_user.mood_over_time,
           label: "Mood Rating", xtitle: "Date", ytitle: "Mood", width: "600px" %>
       <% end %>
+      </div>
+    </center>
     </div>
   </section>
 </section>

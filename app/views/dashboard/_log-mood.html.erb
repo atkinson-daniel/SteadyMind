@@ -1,17 +1,17 @@
-<section id = "mood-entry">
-  <h2>Please share your mood today to see your profile.
-    <i>You can always edit it later.</i></h2>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">How are you?</h5>
-        <p class="card-text">
-          <%= form_tag "/mood" do %>
-            <%= text_field_tag :entry, nil, placeholder: "I'm feeling..." %>
-            <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji %>
-            <br />
-            <%= submit_tag "Submit" %>
-          <% end %>
-        </p>
+<section class="col-md-6 justify-content-start">
+  <section id = "mood-entry">
+      <div id = "entry" class="card box-shadow">
+        <div class="card-body">
+          <h5 class="card-title">How are you feeling today?</h5>
+          <p class="card-text">
+            <%= form_tag "/mood" do %>
+              <%= text_field_tag :entry, nil, placeholder: "I'm feeling..." %>
+              <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji %>
+              <br />
+              <%= submit_tag "Submit", class: "btn btn-primary btn-lg btn-block"%>
+            <% end %>
+          </p>
+        </div>
       </div>
-    </div>
-<section>
+  <section>
+</section>

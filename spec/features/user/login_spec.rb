@@ -3,18 +3,16 @@ require 'rails_helper'
 RSpec.describe 'As a visitor' do
   it 'when I visit the welcome page I see a link to sign in which takes me to the login page' do
     visit '/'
+    click_on 'signing in'
 
-    click_on 'Sign In'
-
-    expect(current_path).to eq('/login')
+    expect(current_path).to eq('/dashboard')
   end
 
   it 'when I visit the login page I can login with Google and the Sign In button now says Logout', :vcr do
     stub_omniauth
 
-    visit '/login'
-
-    click_on 'Sign In With Google'
+    visit '/'
+    click_on 'signing in'
 
     expect(current_path).to eq('/dashboard')
     expect(User.last.name).to eq('Bob')
@@ -27,8 +25,8 @@ RSpec.describe 'As a visitor' do
   it 'if I am already a user, I am taken to my dashboard and a new user is not created in the db', :vcr do
     stub_omniauth
 
-    visit '/login'
-    click_on 'Sign In With Google'
+    visit '/'
+    click_on 'signing in'
 
     expect(User.count).to eq(1)
 
@@ -36,8 +34,8 @@ RSpec.describe 'As a visitor' do
 
     stub_omniauth
 
-    visit '/login'
-    click_on 'Sign In With Google'
+    visit '/'
+    click_on 'signing in'
 
     expect(User.count).to eq(1)
   end

@@ -4,13 +4,13 @@ RSpec.describe 'As a user' do
   it 'when I visit any page I can logout', :vcr do
     stub_omniauth
 
-    visit '/login'
+    visit '/'
 
-    click_on 'Sign In With Google'
+    click_on 'signing in'
 
     click_link 'Logout'
 
-    expect(page).to have_link('Sign In')
+    expect(page).to have_link('sign in')
     expect(page).to have_content('You have been logged out!')
     expect(page).to_not have_link('Logout')
 

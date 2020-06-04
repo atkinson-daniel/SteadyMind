@@ -1,31 +1,32 @@
-<section id = "daily-zen-quote">
+<section id = "daily-zen-quote" class="col-md-12 justify-content-start">
     <blockquote class="blockquote">
       <p class="display-5 mb-0">"<%= @dashboard.quote.quote %>"</p>
       <footer class="blockquote-footer"><%= @dashboard.quote.author %></footer>
     </blockquote>
 </section>
-
-<section id = "dashboard-greeting">
-  <h2>Welcome, <%= @dashboard.name %></h2>
-</section>
-<section id = "edit-mood">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Edit Mood</h5>
-      <p class="card-text">
-        <%= form_tag "/mood/#{@dashboard.user_mood}", method: :put do %>
-          <%= text_field_tag :entry, @dashboard.user_entry %>
-          <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji, { checked: @dashboard.user_selected_mood } %>
-          <br />
-          <%= submit_tag "Save", class: "btn btn-primary btn-lg btn-block"%>
-        <% end %>
-      </p>
+<section class="col-md-6 justify-content-start">
+  <section id = "dashboard-greeting">
+    <h2>Welcome, <%= @dashboard.name %></h2>
+  </section>
+  <section id = "edit-mood" class="box-shadow">
+    <div id = "entry" class="card">
+      <div class="card-body">
+        <h5 class="card-title">Edit Today's Mood</h5>
+        <p class="card-text">
+          <%= form_tag "/mood/#{@dashboard.user_mood}", method: :put do %>
+            <%= text_field_tag :entry, @dashboard.user_entry %>
+            <%= collection_radio_buttons :mood, :id, Mood.all, :id, :name_to_emoji, { checked: @dashboard.user_selected_mood } %>
+            <br />
+            <%= submit_tag "Save", class: "btn btn-primary btn-lg btn-block"%>
+          <% end %>
+        </p>
+      </div>
     </div>
-  </div>
-</section>
-<br /><br />
-<section id = "calendar" class="col-md-6 justify-content-start">
-  <div id="events_calendar">
-    <%= render partial: "calendar", locals: {events: @dashboard.user_calendar_entries} %>
-  </div>
+  </section>
+  <br /><br />
+  <section id = "calendar" class="box-shadow card">
+    <div id="events_calendar">
+      <%= render partial: "calendar", locals: {events: @dashboard.user_calendar_entries} %>
+    </div>
+  </section>
 </section>
