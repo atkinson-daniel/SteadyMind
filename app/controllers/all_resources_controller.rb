@@ -11,7 +11,7 @@ class AllResourcesController < ApplicationController
   private
 
   def find_all_by_category(videos, category)
-    videos.find_all do |video| 
+    videos.find_all do |video|
       video.category == category
     end
   end
