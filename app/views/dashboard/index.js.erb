@@ -1,0 +1,3 @@
+$("#events_calendar").html("<%= escape_javascript render(partial: "calendar", locals: {events: @dashboard.user_calendar_entries}) %>");
+
+change_color()

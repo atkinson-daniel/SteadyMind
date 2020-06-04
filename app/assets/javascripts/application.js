@@ -17,3 +17,21 @@
 //= require bootstrap-sprockets
 //= require chartkick
 //= require Chart.bundle
+
+function change_color() {
+  $( document ).ready(function() {
+    $( ".simple-calendar .day div" ).each(function( index ) {
+      if ($(this).text().trim() == "😟") {
+        $(this).parent().css('background', '#B3CDD1');
+      };
+      if ($(this).text().trim() == "😐") {
+        $(this).parent().css('background', '#D8D9C9');
+      };
+      if ($(this).text().trim() == "😄") {
+        $(this).parent().css('background', '#EFCF4C');
+      };
+    });
+  });
+}
+
+change_color()

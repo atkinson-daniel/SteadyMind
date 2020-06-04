@@ -1,0 +1,10 @@
+
+<%= month_calendar events: events do |date, entries| %>
+  <%= date.strftime("%d") %>
+
+  <% entries.each do |entry| %>
+    <div>
+      <%= entry.mood %>
+    </div>
+  <% end %>
+<% end %>

@@ -36,6 +36,16 @@ class User < ApplicationRecord
     user_moods.joins(:mood).group_by_day(:created_at).sum(:rating)
   end
 
+  def calendar_entries
+    moods = user_moods.select('user_moods.*, moods.name AS name').joins(:mood)
+    moods.map do |mood|
+      info = { start_time: mood[:created_at],
+               entry: mood[:entry],
+               mood: Emoji.find_by_alias(mood[:name]).raw }
+      CalendarEvent.new(info)
+    end
+  end
+
   def suggested_videos
     rating = mood_rating
     if rating < 1.5

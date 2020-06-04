@@ -21,12 +21,14 @@ RSpec.describe 'As a user', :vcr do
 
     expect(page).to have_content 'There was an error!'
 
+    fill_in :entry, with: "I'm feeling great today"
     choose(id: "mood_id_#{@mood3.id}")
     click_on 'Submit'
 
     mood_entry = UserMood.last
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood3.id
+    expect(mood_entry.entry).to eq "I'm feeling great today"
   end
   it 'if I already logged a mood, I can edit the mood from my dashboard.', :vcr do
     stub_omniauth
@@ -38,14 +40,22 @@ RSpec.describe 'As a user', :vcr do
 
     expect(current_path).to eq('/dashboard')
 
+    fill_in :entry, with: "I'm feeling okay"
     choose(id: "mood_id_#{@mood2.id}")
     click_on 'Submit'
 
     mood_entry = UserMood.last
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood2.id
+    expect(mood_entry.entry).to eq "I'm feeling okay"
 
     expect(page).to have_content 'Edit Mood'
+    
+    within('#edit-mood') do
+      expect(page).to have_field(:entry, with: "I'm feeling okay")
+    end
+
+    fill_in :entry, with: "I'm feeling sad actually"
     choose(id: "mood_id_#{@mood1.id}")
     click_on 'Save'
 
@@ -54,5 +64,6 @@ RSpec.describe 'As a user', :vcr do
     expect(page).to have_content 'Welcome, ' + user.name
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood1.id
+    expect(mood_entry.entry).to eq "I'm feeling sad actually"
   end
 end
