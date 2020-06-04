@@ -1,6 +1,6 @@
 <section class='row'>
   <div class="col-md-6 justify-content-start">
-    <h2>All <%= @playlist_videos.current_video.category.capitalize %> Videos</h2>
+    <h2>All <%= @playlist_videos.videos.first.category.capitalize %> Videos</h2>
     <div id="player">
       <script src="https://www.youtube.com/player_api" ></script>
       <script>
