@@ -40,6 +40,8 @@ gem 'jquery-rails'
 gem 'figaro'
 gem "chartkick"
 gem 'groupdate'
+gem 'sendgrid-ruby'
+gem "sidekiq"
 gem "simple_calendar", "2.2.6"
 
 group :development, :test do

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, <%= @user.name %>, we noticed you haven't logged your mood today.</h1>
+    <p>If you would like to do so, please follow the link below!</p>
+    <p><%= link_to "Click here to sign in and log your mood", "/"%></p>
+    <p>Sincerely,</p>
+    <p>The SteadyMind Team</p>
+    <p>Thanks for being a valued user of our platform!</p>
+  </body>
+</html>
