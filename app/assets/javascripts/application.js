@@ -22,13 +22,13 @@ function change_color() {
   $( document ).ready(function() {
     $( ".simple-calendar .day div" ).each(function( index ) {
       if ($(this).text().trim() == "😟") {
-        $(this).parent().css('background', '#B3CDD1');
+        $(this).parent().css('background', '#83D5DB');
       };
       if ($(this).text().trim() == "😐") {
-        $(this).parent().css('background', '#D8D9C9');
+        $(this).parent().css('background', '#F2F2F2');
       };
       if ($(this).text().trim() == "😄") {
-        $(this).parent().css('background', '#EFCF4C');
+        $(this).parent().css('background', '#FB9C96');
       };
     });
   });

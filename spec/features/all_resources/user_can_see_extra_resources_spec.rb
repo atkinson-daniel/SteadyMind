@@ -12,7 +12,7 @@ RSpec.describe 'As a user' do
       expect(current_path).to eq('/all_resources')
       expect(page).to have_selector 'h2', text: 'All Yoga Videos'
       expect(page).to have_link('All Yoga Videos')
-      expect(page).to have_link('All Meditiation Videos')
+      expect(page).to have_link('All Meditation Videos')
       expect(page).to have_link('All Motivational Videos')
       expect(page).to have_css('#player')
     end
@@ -36,7 +36,7 @@ RSpec.describe 'As a user' do
       visit '/dashboard'
       click_link 'All Resources'
 
-      click_link('All Meditiation Videos')
+      click_link('All Meditation Videos')
       expect(page).to have_current_path(all_resources_path(category: 'meditation'))
       expect(page).to have_selector 'h2', text: 'All Meditation Videos'
       expect(first('.video-links').text).to_not be_empty

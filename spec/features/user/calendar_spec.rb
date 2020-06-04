@@ -8,8 +8,8 @@ RSpec.describe 'As a user', :vcr do
       @mood3 = Mood.create(name: 'smile', rating: 3)
 
       stub_omniauth
-      visit '/login'
-      click_on 'Sign In With Google'
+      visit '/'
+      click_on 'signing in'
 
       @user = User.last
     end
