@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://zenquotes.io/api/today
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 04 Jun 2020 03:05:49 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.31
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '143'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: '[ {"q":"Those who know, do. Those that understand, teach.","a":"Aristotle","h":"<blockquote>&ldquo;Those
+        who know, do. Those that understand, teach.&rdquo; &mdash; <footer>Aristotle</footer></blockquote>"}
+        ]'
+  recorded_at: Thu, 04 Jun 2020 03:05:49 GMT
+- request:
+    method: get
+    uri: https://zenquotes.io/api/today
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 04 Jun 2020 03:05:49 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.31
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '143'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: '[ {"q":"Those who know, do. Those that understand, teach.","a":"Aristotle","h":"<blockquote>&ldquo;Those
+        who know, do. Those that understand, teach.&rdquo; &mdash; <footer>Aristotle</footer></blockquote>"}
+        ]'
+  recorded_at: Thu, 04 Jun 2020 03:05:49 GMT
+recorded_with: VCR 6.0.0

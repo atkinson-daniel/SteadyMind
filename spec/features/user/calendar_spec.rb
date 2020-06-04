@@ -13,12 +13,12 @@ RSpec.describe 'As a user', :vcr do
 
       @user = User.last
     end
-    it 'I can click on stats, and view a calendar view of my enteries' do
+    it 'I can see a calendar view of my entries', :vcr do
       expect(current_path).to eq('/dashboard')
 
-      UserMood.create!(user: @user, mood: @mood2, created_at: Date.today)
-
-      click_on 'My Profile'
+      fill_in :entry, with: "I'm feeling great today"
+      choose(id: "mood_id_#{@mood2.id}")
+      click_on 'Submit'
 
       within(".today") do
         expect(page).to have_content "😐"
