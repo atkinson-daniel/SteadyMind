@@ -5,7 +5,8 @@ class AllResourcesController < ApplicationController
     video_results = VideoResults.new.create_videos
     params[:category] = 'yoga' if params[:category].nil?
     videos = find_all_by_category(video_results, params[:category])
-    @playlist_videos = PlaylistFacade.new(videos, params[:video_id])
+    @facade = PlaylistFacade.new(videos, params[:video_id])
+    @playlist_items = @facade.videos.paginate(page: params[:page], per_page: 5)
   end
 
   private

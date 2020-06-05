@@ -3,7 +3,11 @@ class VideosController < ApplicationController
 
   def index
     videos = current_user.suggested_videos
-    videos = videos.select { |video| video.category == params[:category] } if params[:category]
-    @playlist_videos = PlaylistFacade.new(videos, params[:video_id])
+    return if videos.nil?
+
+    params[:category] = 'yoga' if params[:category].nil?
+    videos = videos.select { |video| video.category == params[:category] }
+    @facade = PlaylistFacade.new(videos, params[:video_id])
+    @playlist_items = @facade.videos.paginate(page: params[:page], per_page: 5)
   end
 end
