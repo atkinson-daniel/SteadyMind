@@ -54,7 +54,7 @@ Run `bundle exec rspec` to run the test suite. Make sure you are connected to th
 ## Development
 To run SteadyMind in development, run `rails s` and visit `http://localhost:3000`
 
-## The Feature of SteadyMind
+## The Future of SteadyMind
 - Add weekly goals. This can be setting a goal to drink 8 classes of water a day, to going to the gym 3 days a week.
 - Allow user to see historic diary entries 
 - Build an in-app breathing and meditation guide
