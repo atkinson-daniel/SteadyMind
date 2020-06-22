@@ -90,6 +90,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.13.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -340,6 +342,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   faraday
+  fast_jsonapi
   figaro
   gemoji
   groupdate

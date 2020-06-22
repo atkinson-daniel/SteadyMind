@@ -44,6 +44,7 @@ gem 'sendgrid-ruby'
 gem "sidekiq"
 gem "simple_calendar", "2.2.6"
 gem 'will_paginate'
+gem 'fast_jsonapi'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
