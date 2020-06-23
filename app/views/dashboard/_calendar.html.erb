@@ -1,10 +1,10 @@
 
 <%= month_calendar events: events do |date, entries| %>
-  <span class="thin"><%= date.strftime("%d") %></span>
+  <span class="thin"> <%= date.strftime("%d") %></span>
 
   <% entries.each do |entry| %>
-    <div>
+    <%= content_tag :div, class: "calendar-day", data: {date: date} do %>
       <%= entry.mood %>
-    </div>
+    <% end %>
   <% end %>
 <% end %>
