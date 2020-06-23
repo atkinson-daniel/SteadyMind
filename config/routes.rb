@@ -12,5 +12,7 @@ Rails.application.routes.draw do
 
   resources :all_resources, only: [:index]
 
+  resources :user_moods, only: [:index]
+
   get '/auth/google_oauth2/callback', to: 'sessions#create'
 end
