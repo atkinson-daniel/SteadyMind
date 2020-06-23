@@ -23,10 +23,15 @@
       </div>
     </div>
   </section>
-  <br /><br />
-  <section id = "calendar" class="box-shadow card">
-    <div id="events_calendar">
-      <%= render partial: "calendar", locals: {events: @dashboard.user_calendar_entries} %>
-    </div>
-  </section>
 </section>
+
+<br /><br />
+<div class="container">
+  <div class="row justify-content-center user-calendar">
+      <section id = "calendar" class="box-shadow card col-md-6 ">
+        <div id="events_calendar">
+          <%= render partial: "calendar", locals: {events: @dashboard.user_calendar_entries} %>
+        </div>
+      </section>
+  </div>
+</div>
