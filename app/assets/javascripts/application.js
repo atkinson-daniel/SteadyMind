@@ -34,4 +34,32 @@ function change_color() {
   });
 }
 
-change_color()
+change_color();
+
+function show_diary() {
+  let timesClicked = 0
+  $(document).ready(function() {
+    $(".calendar-day").click(function(){
+      timesClicked ++;
+      if(timesClicked % 2 !== 0){
+        const date = $(this).data('date');
+        const newDate = new Date(date);
+        const longDate = newDate.toDateString();
+        $.ajax({
+          type: 'GET',
+          url: `http://localhost:3000/user_moods?date=${date}`,
+          success: function(entry) {
+            const user_entry = entry['data']['attributes']['entry'];
+            $(".user-calendar").append("<section class='box-shadow card col-md-5 diary-log'> <span class='calendar-title'>Your Diary Entry On "+ longDate +"</span><br><br>" + user_entry + "</section>");
+          }
+        })
+      }
+      else {
+        const diaryLog = document.querySelector('.diary-log');
+        diaryLog.remove();
+      }
+    })
+  })
+}
+
+show_diary();
