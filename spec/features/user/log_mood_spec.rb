@@ -6,7 +6,7 @@ RSpec.describe 'As a user', :vcr do
     @mood2 = Mood.create(name: 'neutral_face', rating: 2)
     @mood3 = Mood.create(name: 'smile', rating: 3)
   end
-  it 'once logged in, I\'m redirected to a page where I can log my mood.', :vcr do
+  it "once logged in, I'm redirected to a page where I can log my mood.", :vcr do
     stub_omniauth
 
     visit '/'
@@ -64,5 +64,46 @@ RSpec.describe 'As a user', :vcr do
     expect(mood_entry.user_id).to eq user.id
     expect(mood_entry.mood_id).to eq @mood1.id
     expect(mood_entry.entry).to eq "I'm feeling sad actually"
+  end
+
+  it 'I can see a modal with my diary log entry by clicking an emoji on the calendar' do
+    stub_omniauth
+
+    visit '/'
+
+    click_on 'signing in'
+
+    expect(current_path).to eq('/dashboard')
+
+    fill_in :entry, with: "I'm feeling okay"
+    choose(id: "mood_id_#{@mood2.id}")
+    click_on 'Submit'
+
+    current_date = Date.today.day
+    find("[data-target='#modal#{current_date}']").click
+
+    expect(page).to have_button('Close')
+    expect(page).to have_content("Your Diary Entry on #{Date.today.strftime("%B %d, %Y")}")
+    expect(page).to have_content("I'm feeling okay")
+  end
+
+  it "I can see a modal saying 'No mood logged on this day.' if mood was logged but no diary entry was made" do
+    stub_omniauth
+
+    visit '/'
+
+    click_on 'signing in'
+
+    expect(current_path).to eq('/dashboard')
+
+    choose(id: "mood_id_#{@mood2.id}")
+    click_on 'Submit'
+
+    current_date = Date.today.day
+    find("[data-target='#modal#{current_date}']").click
+
+    expect(page).to have_button('Close')
+    expect(page).to have_content("Your Diary Entry on #{Date.today.strftime("%B %d, %Y")}")
+    expect(page).to have_content("No mood logged on this day.")
   end
 end

@@ -4,7 +4,32 @@
 
   <% entries.each do |entry| %>
     <div>
-      <%= entry.mood %>
+      <% if entry.mood %>
+        <button class='emoji-btn' type="button" name="button" data-toggle="modal" data-target="#modal<%= date.strftime("%d") %>"><%= entry.mood %></button>
+      <% end %>
+    </div>
+
+    <div class="modal fade" id="modal<%= date.strftime("%d") %>" tabindex="-1" role="dialog" aria-labelledby="diary" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="diary"> Your Diary Entry on <%= date.strftime("%B %d, %Y") %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <% if entry.entry != '' %>
+              <%= entry.entry %>
+            <% else %>
+              No mood logged on this day.
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 <% end %>

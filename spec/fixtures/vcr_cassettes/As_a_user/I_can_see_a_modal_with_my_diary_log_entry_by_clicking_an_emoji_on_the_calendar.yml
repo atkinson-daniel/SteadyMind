@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://zenquotes.io/api/today
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 Jun 2020 02:56:39 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.31
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '153'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: '[ {"q":"If you do what you''ve always done, you''ll get what you''ve
+        always gotten.","a":"Tony Robbins","h":"<blockquote>&ldquo;If you do what
+        you''ve always done, you''ll get what you''ve always gotten.&rdquo; &mdash;
+        <footer>Tony Robbins</footer></blockquote>"} ]'
+  recorded_at: Sun, 28 Jun 2020 02:56:40 GMT
+- request:
+    method: get
+    uri: https://zenquotes.io/api/today
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 Jun 2020 02:56:40 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/7.2.31
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '153'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: '[ {"q":"If you do what you''ve always done, you''ll get what you''ve
+        always gotten.","a":"Tony Robbins","h":"<blockquote>&ldquo;If you do what
+        you''ve always done, you''ll get what you''ve always gotten.&rdquo; &mdash;
+        <footer>Tony Robbins</footer></blockquote>"} ]'
+  recorded_at: Sun, 28 Jun 2020 02:56:40 GMT
+recorded_with: VCR 6.0.0
