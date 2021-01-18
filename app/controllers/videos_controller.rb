@@ -5,9 +5,12 @@ class VideosController < ApplicationController
     videos = current_user.suggested_videos
     return if videos.nil?
 
-    params[:category] = 'yoga' if params[:category].nil?
-    videos = videos.select { |video| video.category == params[:category] }
-    @facade = PlaylistFacade.new(videos, params[:video_id])
-    @playlist_items = @facade.videos.paginate(page: params[:page], per_page: 5)
+    @facade = PlaylistFacade.new(videos, facade_params)
+  end
+
+  private
+
+  def facade_params
+    params.permit(:category, :video_id, :page)
   end
 end
