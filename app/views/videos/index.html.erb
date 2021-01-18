@@ -2,7 +2,7 @@
   <section class='row content'>
     <% if @facade %>
     <div class="col-md-6">
-      <h2>Suggested <%= @facade.videos.first.category.capitalize %> Videos</h2>
+      <h2>Suggested <%= @facade.category.capitalize %> Videos</h2>
         <div id="player">
           <script src="https://www.youtube.com/player_api" ></script>
           <script>
@@ -12,18 +12,18 @@
               player = new YT.Player('player', {
                 width: '100%',
                 height: '390px',
-                videoId: '<%= @facade.current_video.video_id %>'
+                videoId: '<%= @facade.current_video_id %>'
               });
             }
           </script>
         </div>
       <div class='video-links'>
         <ul class="list-group">
-          <% @playlist_items.each do |video| %>
+          <% @facade.paginated_videos.each do |video| %>
           <li class="list-group-item"><%= link_to video.title, "/videos?video_id=#{video.video_id}" %></li>
           <% end %>
         </ul>
-        <%= will_paginate @playlist_items, :container => false %>
+        <%= will_paginate @facade.paginated_videos, :container => false %>
       </div>
     </div>
     <div class="additional-resources col-md-2">
